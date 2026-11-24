@@ -1,0 +1,123 @@
+
+[
+  {
+    "id": "Q01",
+    "question": "What is Artificial Intelligence?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q02",
+    "question": "What are the goals of Artificial Intelligence?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q03",
+    "question": "Explain Strong AI versus Weak AI.",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q04",
+    "question": "What is the Turing Test?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q05",
+    "question": "What are the major parts of AI?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q06",
+    "question": "What is the relationship between Machine Learning and Artificial Intelligence?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q07",
+    "question": "What is Deep Learning?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q08",
+    "question": "What is Natural Language Processing?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q09",
+    "question": "What are expert systems in Artificial Intelligence?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q10",
+    "question": "What is Reinforcement Learning?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q11",
+    "question": "What is SQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q12",
+    "question": "What are SQL joins?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q13",
+    "question": "What is the difference between SQL and MySQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q14",
+    "question": "What is a database transaction in SQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q15",
+    "question": "How do transactions maintain data consistency and integrity in SQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q16",
+    "question": "What is the purpose of the COMMIT command in SQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q17",
+    "question": "What is the purpose of the ROLLBACK command in SQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q18",
+    "question": "What are subqueries in SQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true
+  },
+  {
+    "id": "Q19",
+    "question": "What is the current population of India?",
+    "expected_sources": [],
+    "answerable": false
+  },
+  {
+    "id": "Q20",
+    "question": "Who is the current Prime Minister of India?",
+    "expected_sources": [],
+    "answerable": false
+  }
+]

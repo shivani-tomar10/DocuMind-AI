@@ -1,0 +1,76 @@
+
+[
+  {
+    "id": "Q1",
+    "question": "What is SQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true,
+    "reference_answer": "SQL (Structured Query Language) is the standard language used to interact with relational databases. It is used to retrieve, insert, update, and delete data, as well as create and manage tables."
+  },
+  {
+    "id": "Q2",
+    "question": "What are SQL joins?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true,
+    "reference_answer": "A join is an operation that combines rows from two or more tables based on a related column. Joins retrieve data from multiple tables by linking them through a common key or column. The notes describe Inner Join, Outer Join, Cross Join, and Self Join. Inner Join returns only rows where the join condition is satisfied."
+  },
+  {
+    "id": "Q3",
+    "question": "What is the difference between Strong AI and Weak AI?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true,
+    "reference_answer": "Weak AI focuses on whether a system performs its task correctly, regardless of whether it uses the same methods as humans. Strong AI is concerned with the internal structure and methods of the system, aiming to reproduce human-like intelligence and potentially consciousness."
+  },
+  {
+    "id": "Q4",
+    "question": "What is Artificial Intelligence?",
+    "expected_sources": ["sample.pdf"],
+    "answerable": true,
+    "reference_answer": "Artificial intelligence is the science of making machines do things that would require intelligence if done by humans. Intelligence includes learning from experience, reasoning well, remembering important information, and coping with everyday demands."
+  },
+  {
+    "id": "Q5",
+    "question": "What is the population of India?",
+    "expected_sources": [],
+    "answerable": false,
+    "reference_answer": null
+  },
+  {
+    "id": "Q6",
+    "question": "Who is the current Prime Minister of India?",
+    "expected_sources": [],
+    "answerable": false,
+    "reference_answer": null
+  },
+  {
+    "id": "Q7",
+    "question": "What is the relationship between Artificial Intelligence and SQL?",
+    "expected_sources": [],
+    "answerable": false,
+    "reference_answer": null
+  },
+  {
+    "id": "Q8",
+    "question": "Summarize the main topics covered across all uploaded documents.",
+    "expected_sources": [
+      "sample.pdf",
+      "31. SQL Notes by Apna College.pdf"
+    ],
+    "answerable": true,
+    "reference_answer": "The SQL Notes cover database fundamentals, relational databases, SQL and MySQL, data types, SQL commands (DDL, DQL, DML, DCL, and TCL), queries, filtering, sorting, grouping, aggregate functions, transactions, and joins. The AI/ML book covers artificial intelligence, Strong AI and Weak AI, the Turing Test, machine learning, classification, regression, deep learning, neural networks, CNNs, RNNs, LSTMs, natural language processing, reinforcement learning, Keras, TensorFlow, and Pandas."
+  },
+  {
+    "id": "Q9",
+    "question": "What is the difference between SQL and MySQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true,
+    "reference_answer": "SQL is a language used to perform CRUD operations in relational databases, whereas MySQL is a Relational Database Management System (RDBMS) that uses SQL."
+  },
+  {
+    "id": "Q10",
+    "question": "What are COMMIT and ROLLBACK in SQL?",
+    "expected_sources": ["31. SQL Notes by Apna College.pdf"],
+    "answerable": true,
+    "reference_answer": "COMMIT permanently saves changes made during a transaction. ROLLBACK undoes changes made during a transaction, helping maintain database consistency when an error occurs."
+  }
+]

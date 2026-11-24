@@ -1,0 +1,142 @@
+{
+  "Q01": {
+    "sample_p23_chunk3": 2,
+    "sample_p21_chunk1": 1,
+    "sample_p23_chunk1": 2,
+    "sample_p20_chunk3": 1,
+    "sample_p8_chunk1": 0
+  },
+  "Q02": {
+    "sample_p23_chunk1": 2,
+    "sample_p20_chunk3": 1,
+    "sample_p33_chunk3": 0,
+    "sample_p2_chunk1": 0,
+    "sample_p21_chunk1": 1
+  },
+  "Q03": {
+    "sample_p23_chunk4": 2,
+    "sample_p23_chunk6": 2,
+    "sample_p24_chunk1": 2,
+    "sample_p41_chunk2": 1,
+    "sample_p20_chunk3": 1
+  },
+  "Q04": {
+    "sample_p24_chunk3": 2,
+    "sample_p25_chunk1": 0,
+    "sample_p20_chunk3": 1,
+    "sample_p24_chunk2": 1,
+    "sample_p24_chunk5": 1
+  },
+  "Q05": {
+    "sample_p37_chunk2": 2,
+    "sample_p8_chunk2": 1,
+    "sample_p41_chunk3": 2,
+    "sample_p20_chunk3": 1,
+    "sample_p37_chunk4": 2
+  },
+  "Q06": {
+    "sample_p2_chunk1": 0,
+    "sample_p23_chunk1": 0,
+    "sample_p23_chunk3": 0,
+    "sample_p21_chunk1": 0,
+    "sample_p81_chunk1": 1
+  },
+  "Q07": {
+    "sample_p117_chunk4": 2,
+    "sample_p203_chunk4": 1,
+    "sample_p122_chunk1": 1,
+    "sample_p118_chunk1": 2,
+    "sample_p38_chunk3": 2
+  },
+  "Q08": {
+    "sample_p33_chunk5": 1,
+    "sample_p20_chunk4": 2,
+    "sample_p179_chunk1": 2,
+    "sample_p17_chunk2": 1,
+    "sample_p178_chunk1": 1
+  },
+  "Q09": {
+    "sample_p31_chunk1": 2,
+    "sample_p8_chunk1": 1,
+    "sample_p26_chunk5": 2,
+    "sample_p32_chunk2": 1,
+    "sample_p41_chunk3": 1
+  },
+  "Q10": {
+    "sample_p192_chunk5": 2,
+    "sample_p38_chunk4": 2,
+    "sample_p203_chunk4": 1,
+    "sample_p178_chunk4": 1,
+    "sample_p194_chunk1": 2
+  },
+  "Q11": {
+    "31. SQL Notes by Apna College_61abe913_p1_chunk1": 1,
+    "31. SQL Notes by Apna College_61abe913_p1_chunk3": 2,
+    "31. SQL Notes by Apna College_61abe913_p2_chunk1": 1,
+    "31. SQL Notes by Apna College_61abe913_p1_chunk2": 0,
+    "31. SQL Notes by Apna College_61abe913_p5_chunk3": 1
+  },
+  "Q12": {
+    "31. SQL Notes by Apna College_61abe913_p15_chunk2": 2,
+    "31. SQL Notes by Apna College_61abe913_p20_chunk2": 2,
+    "31. SQL Notes by Apna College_61abe913_p21_chunk2": 1,
+    "31. SQL Notes by Apna College_61abe913_p26_chunk2": 1,
+    "31. SQL Notes by Apna College_61abe913_p19_chunk1": 2
+  },
+  "Q13": {
+    "31. SQL Notes by Apna College_61abe913_p2_chunk1": 2,
+    "31. SQL Notes by Apna College_61abe913_p1_chunk1": 0,
+    "31. SQL Notes by Apna College_61abe913_p1_chunk3": 1,
+    "31. SQL Notes by Apna College_61abe913_p5_chunk3": 1,
+    "31. SQL Notes by Apna College_61abe913_p4_chunk1": 1
+  },
+  "Q14": {
+    "31. SQL Notes by Apna College_61abe913_p13_chunk3": 2,
+    "31. SQL Notes by Apna College_61abe913_p13_chunk4": 1,
+    "31. SQL Notes by Apna College_61abe913_p1_chunk1": 0,
+    "31. SQL Notes by Apna College_61abe913_p13_chunk2": 2,
+    "31. SQL Notes by Apna College_61abe913_p1_chunk3": 1
+  },
+  "Q15": {
+    "31. SQL Notes by Apna College_61abe913_p13_chunk3": 2,
+    "31. SQL Notes by Apna College_61abe913_p15_chunk1": 2,
+    "31. SQL Notes by Apna College_61abe913_p1_chunk2": 1,
+    "31. SQL Notes by Apna College_61abe913_p13_chunk2": 2,
+    "31. SQL Notes by Apna College_61abe913_p13_chunk4": 1
+  },
+  "Q16": {
+    "31. SQL Notes by Apna College_61abe913_p13_chunk3": 2,
+    "31. SQL Notes by Apna College_61abe913_p13_chunk4": 2,
+    "31. SQL Notes by Apna College_61abe913_p15_chunk1": 1,
+    "31. SQL Notes by Apna College_61abe913_p14_chunk1": 0,
+    "31. SQL Notes by Apna College_61abe913_p4_chunk1": 1
+  },
+  "Q17": {
+    "31. SQL Notes by Apna College_61abe913_p14_chunk1": 2,
+    "31. SQL Notes by Apna College_61abe913_p13_chunk3": 1,
+    "31. SQL Notes by Apna College_61abe913_p15_chunk1": 1,
+    "31. SQL Notes by Apna College_61abe913_p13_chunk4": 0,
+    "31. SQL Notes by Apna College_61abe913_p14_chunk2": 1
+  },
+  "Q18": {
+    "31. SQL Notes by Apna College_61abe913_p25_chunk1": 2,
+    "31. SQL Notes by Apna College_61abe913_p26_chunk3": 1,
+    "31. SQL Notes by Apna College_61abe913_p26_chunk4": 1,
+    "31. SQL Notes by Apna College_61abe913_p1_chunk3": 0,
+    "31. SQL Notes by Apna College_61abe913_p26_chunk2": 1
+  },
+  "Q19": {
+    "sample_p80_chunk2": 0,
+    "sample_p164_chunk3": 0,
+    "sample_p157_chunk2": 0,
+    "sample_p285_chunk4": 0,
+    "sample_p201_chunk2": 0
+  },
+  "Q20": {
+    "sample_p80_chunk2": 0,
+    "sample_p163_chunk4": 0,
+    "sample_p194_chunk5": 0,
+    "sample_p157_chunk2": 0,
+    "sample_p175_chunk3": 0
+  }
+}

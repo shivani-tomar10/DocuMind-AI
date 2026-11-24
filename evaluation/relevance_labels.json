@@ -1,0 +1,38 @@
+
+{
+  "What is Artificial Intelligence?": {
+    "sample_p23_chunk3": 2,
+    "sample_p21_chunk1": 1,
+    "sample_p23_chunk1": 2,
+    "sample_p20_chunk3": 1,
+    "sample_p8_chunk1": 1
+  },
+  "What are the goals of Artificial Intelligence?": {
+    "sample_p23_chunk1": 2,
+    "sample_p20_chunk3": 1,
+    "sample_p33_chunk3": 1,
+    "sample_p2_chunk1": 0,
+    "sample_p21_chunk1": 0
+  },
+  "Explain Strong AI versus Weak AI.": {
+    "sample_p23_chunk4": 2,
+    "sample_p23_chunk6": 2,
+    "sample_p24_chunk1": 2,
+    "sample_p41_chunk2": 1,
+    "sample_p20_chunk3": 1
+  },
+  "What is the Turing Test?": {
+    "sample_p24_chunk3": 2,
+    "sample_p25_chunk1": 1,
+    "sample_p20_chunk3": 1,
+    "sample_p24_chunk2": 1,
+    "sample_p24_chunk5": 2
+  },
+  "What are the major parts of AI?": {
+    "sample_p37_chunk2": 2,
+    "sample_p8_chunk2": 2,
+    "sample_p41_chunk3": 2,
+    "sample_p20_chunk3": 1,
+    "sample_p37_chunk4": 1
+  }
+}

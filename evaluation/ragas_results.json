@@ -1,0 +1,79 @@
+[
+    {
+        "id": "Q1",
+        "question": "What is SQL?",
+        "answer": "SQL (Structured Query Language) is the standard language used to interact with relational databases [Source: 31. SQL Notes by Apna College_61abe913.pdf, Page: 1].",
+        "scores": {
+            "faithfulness": 1.0,
+            "context_precision": 0.5833333333041666,
+            "context_recall": 1.0,
+            "answer_relevancy": 0.9391986322751039
+        }
+    },
+    {
+        "id": "Q2",
+        "question": "What are SQL joins?",
+        "answer": "In a DBMS, a join is an operation that combines rows from two or more tables based on a related column or specified join conditions between them. Joins are used to retrieve data from multiple related tables by linking them together using a common key or column [Source: 31. SQL Notes by Apna College_61abe913.pdf, Page: 15, 26].",
+        "scores": {
+            "faithfulness": 1.0,
+            "context_precision": 0.9999999999666667,
+            "context_recall": 1.0,
+            "answer_relevancy": 0.8172800682008109
+        }
+    },
+    {
+        "id": "Q3",
+        "question": "What is the difference between Strong AI and Weak AI?",
+        "answer": "The difference between Strong AI and Weak AI lies in their focus and approach:\n\n* **Weak AI** measures success based purely on system performance. It views any system exhibiting intelligent behavior as an example of AI and focuses on whether a program performs correctly, regardless of whether it accomplishes the task the same way humans do. \n* **Strong AI** is concerned with the structure of the systems being built. Proponents of strong AI maintain that computers possess heuristics, algorithms, and knowledge, and they aim to achieve success by simulating how humans actually perform tasks (such as simulating the human hearing system, including equivalents to the eardrum, hearing canal, and cochlea).\n\n[Source: sample.pdf, Page: 23-24]",
+        "scores": {
+            "faithfulness": 1.0,
+            "context_precision": 0.8333333332916666,
+            "context_recall": 0.5,
+            "answer_relevancy": 0.9999999999998547
+        }
+    },
+    {
+        "id": "Q4",
+        "question": "What is Artificial Intelligence?",
+        "answer": "The literal meaning of the word \"artificial\" is \"synthetic.\" \n\n[Source: sample.pdf, Page: 21]",
+        "scores": {
+            "faithfulness": 1.0,
+            "context_precision": 0.0,
+            "context_recall": 0.0,
+            "answer_relevancy": 0.548085659110866
+        }
+    },
+    {
+        "id": "Q8",
+        "question": "Summarize the main topics covered across all uploaded documents.",
+        "answer": "Based on the provided documents, the main topics covered are:\n\n* **Natural Language Processing (NLP), Artificial Intelligence, and Machine Learning:** This includes topics such as NLP techniques, transformer architectures, data preprocessing, popular NLP algorithms (like BoW, n-grams, skip-grams, TF-IDF, Word2Vector, GloVe, and LDA), term frequency, word embeddings, and models like BERT and OpenAI [Source: sample.pdf, Pages: 12, 183, 187].\n* **SQL (Structured Query Language):** This includes database basics, subqueries, joins, transactions, and commands such as COMMIT and ROLLBACK [Source: 31. SQL Notes by Apna College_61abe913.pdf, Pages: 1, 13, 26].",
+        "scores": {
+            "faithfulness": 1.0,
+            "context_precision": 0.0,
+            "context_recall": 0.0,
+            "answer_relevancy": 0.6622081744524206
+        }
+    },
+    {
+        "id": "Q9",
+        "question": "What is the difference between SQL and MySQL?",
+        "answer": "SQL is a language used to perform CRUD operations in a Relational Database, while MySQL is a Relational Database Management System (RDBMS) that uses SQL [Source: 31. SQL Notes by Apna College_61abe913.pdf, Page: 2].",
+        "scores": {
+            "faithfulness": 1.0,
+            "context_precision": 0.9999999999,
+            "context_recall": 1.0,
+            "answer_relevancy": 0.9999999999997939
+        }
+    },
+    {
+        "id": "Q10",
+        "question": "What are COMMIT and ROLLBACK in SQL?",
+        "answer": "Based on the provided documents:\n\n* **COMMIT:** The COMMIT command is used to permanently save the changes made during a transaction. It makes all the changes applied to the database since the last COMMIT or ROLLBACK command permanent, indicating that the transaction was successful [Source: 31. SQL Notes by Apna College_61abe913.pdf, Page: 13].\n* **ROLLBACK:** The ROLLBACK command is used to undo changes made during a transaction. It reverts all the changes applied to the database since the transaction began, typically used when an error occurs to ensure the database remains in a consistent state [Source: 31. SQL Notes by Apna College_61abe913.pdf, Page: 14].",
+        "scores": {
+            "faithfulness": 1.0,
+            "context_precision": 0.3333333333,
+            "context_recall": 1.0,
+            "answer_relevancy": 0.9003783289833066
+        }
+    }
+]

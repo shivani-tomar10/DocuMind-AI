@@ -1,0 +1,40 @@
+{
+    "evaluation_questions": 5,
+    "results": [
+        {
+            "question": "What is Artificial Intelligence?",
+            "precision_at_5": 1.0,
+            "pooled_recall_at_5": 1.0,
+            "ndcg_at_5": 0.9578347709816888
+        },
+        {
+            "question": "What are the goals of Artificial Intelligence?",
+            "precision_at_5": 0.6,
+            "pooled_recall_at_5": 1.0,
+            "ndcg_at_5": 1.0
+        },
+        {
+            "question": "Explain Strong AI versus Weak AI.",
+            "precision_at_5": 1.0,
+            "pooled_recall_at_5": 1.0,
+            "ndcg_at_5": 1.0
+        },
+        {
+            "question": "What is the Turing Test?",
+            "precision_at_5": 1.0,
+            "pooled_recall_at_5": 1.0,
+            "ndcg_at_5": 0.9213963208540731
+        },
+        {
+            "question": "What are the major parts of AI?",
+            "precision_at_5": 1.0,
+            "pooled_recall_at_5": 1.0,
+            "ndcg_at_5": 1.0
+        }
+    ],
+    "averages": {
+        "average_precision_at_5": 0.9199999999999999,
+        "average_pooled_recall_at_5": 1.0,
+        "average_ndcg_at_5": 0.9758462183671524
+    }
+}
