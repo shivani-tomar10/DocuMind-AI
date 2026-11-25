@@ -1,5 +1,6 @@
 
-from llm import generate_answer
+from backend.llm import generate_answer
+
 
 question = "What is Artificial Intelligence?"
 
@@ -15,9 +16,12 @@ tasks that normally require human intelligence.
 -------------------------
 """
 
-print("Sending request to DocuMind AI...", flush=True)
 
-answer = generate_answer(question, context)
+if __name__ == "__main__":
 
-print("\nDocuMind AI Response:")
-print(answer)
+    print("Sending request to DocuMind AI...", flush=True)
+
+    answer = generate_answer(question, context)
+
+    print("\nDocuMind AI Response:")
+    print(answer)

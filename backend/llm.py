@@ -7,7 +7,7 @@ from google import genai
 
 
 # --------------------------------
-# 1. Load Gemini API configuration
+# 1. Load Gemini API Configuration
 # --------------------------------
 
 load_dotenv()
@@ -21,34 +21,47 @@ client = genai.Client(api_key=api_key)
 
 
 # --------------------------------
-# 2. Generate Expanded Search Query
+# 2. Generate Multiple Search Queries
 # --------------------------------
 
-def generate_search_query(query):
+def generate_search_queries(query, num_queries=3):
+    """
+    Generate multiple focused search queries
+    for improved RAG retrieval.
+    """
+
+    if not query or not query.strip():
+        return []
+
+    if num_queries < 1:
+        return []
 
     prompt = f"""
 You are a search query optimization assistant
 for a document-based RAG system.
 
-Rewrite the user's question into a focused
-semantic search query.
+Generate exactly {num_queries} different search queries
+based on the user's original question.
 
 STRICT RULES:
-1. Preserve the exact intent of the original question.
+
+1. Preserve the original question's intent.
 2. Keep the main subject and important keywords.
-3. Add useful synonyms and alternative expressions.
-4. Include the type of information being requested.
+3. Use different natural wording and synonyms.
+4. Explore different semantic formulations of the
+   same question.
 5. Do not introduce unrelated subtopics.
-6. Do not add examples unless requested.
-7. Do not broaden a definition question into a
-   general overview of the subject.
-8. Keep the query concise, ideally 15-25 words.
-9. Return only the rewritten search query.
+6. Do not invent facts or answers.
+7. Keep every query concise.
+8. Make the queries meaningfully different.
+9. Return one query per line.
+10. Do not include numbering, bullets, headings,
+    explanations, or quotation marks.
 
 USER QUESTION:
 {query}
 
-FOCUSED SEARCH QUERY:
+ALTERNATIVE SEARCH QUERIES:
 """
 
     try:
@@ -58,29 +71,92 @@ FOCUSED SEARCH QUERY:
             timeout=60
         )
 
-        expanded_query = interaction.output_text.strip()
+        output = interaction.output_text.strip()
 
-        if not expanded_query:
-            return query
+        if not output:
+            return []
 
-        return expanded_query
+        generated_queries = []
+
+        for line in output.splitlines():
+
+            cleaned = line.strip()
+
+            # Remove numbering and bullet formatting
+            cleaned = re.sub(
+                r"^\s*(?:\d+[.)]\s*|[-*•]\s*)",
+                "",
+                cleaned
+            )
+
+            # Remove surrounding quotation marks
+            cleaned = cleaned.strip("\"'` ")
+
+            if not cleaned:
+                continue
+
+            # Avoid duplicate original query
+            if cleaned.casefold() == query.strip().casefold():
+                continue
+
+            # Avoid duplicate generated queries
+            if cleaned.casefold() not in {
+                item.casefold()
+                for item in generated_queries
+            }:
+                generated_queries.append(cleaned)
+
+            if len(generated_queries) >= num_queries:
+                break
+
+        return generated_queries
 
     except Exception as error:
 
         print(
-            "Query expansion failed:",
+            "Multiple query generation failed:",
             type(error).__name__,
             str(error)
         )
 
-        return query
+        return []
 
 
 # --------------------------------
-# 3. Generate Final RAG Answer
+# 3. Backward-Compatible Query Function
+# --------------------------------
+
+def generate_search_query(query):
+    """
+    Generate one alternative search query.
+    Retained for backward compatibility.
+    """
+
+    queries = generate_search_queries(
+        query,
+        num_queries=1
+    )
+
+    if queries:
+        return queries[0]
+
+    return query
+
+
+# --------------------------------
+# 4. Generate Final RAG Answer
 # --------------------------------
 
 def generate_answer(query, context):
+    """
+    Generate an answer using retrieved document context.
+    """
+
+    if not context or not context.strip():
+        return (
+            "The information was not found "
+            "in the uploaded documents."
+        )
 
     prompt = f"""
 You are DocuMind AI, an intelligent
@@ -119,7 +195,6 @@ ANSWER:
 """
 
     try:
-
         interaction = client.interactions.create(
             model="gemini-3.5-flash-lite",
             input=prompt,
@@ -127,6 +202,12 @@ ANSWER:
         )
 
         answer = interaction.output_text.strip()
+
+        if not answer:
+            return (
+                "Sorry, I could not generate "
+                "an answer from the provided documents."
+            )
 
         return answer
 
@@ -138,32 +219,41 @@ ANSWER:
             str(error)
         )
 
-        return "Sorry, I could not generate an answer at this time."
+        return (
+            "Sorry, I could not generate an answer at this time."
+        )
 
 
 # --------------------------------
-# 4. Validate Generated Citations
+# 5. Validate Generated Citations
 # --------------------------------
 
 def validate_citations(answer, metadatas):
+    """
+    Validate generated source filenames and page numbers
+    against retrieved document metadata.
 
-    # Step 1: Create valid source-page pairs
+    Note:
+    This validates citation references, not whether
+    the cited passage semantically supports the claim.
+    """
+
     valid_sources = {
         (
-            str(metadata["source"]),
-            str(metadata["page_number"])
+            str(metadata.get("source", "")).strip(),
+            str(metadata.get("page_number", "")).strip()
         )
-        for metadata in metadatas
+        for metadata in (metadatas or [])
+        if metadata.get("source") is not None
+        and metadata.get("page_number") is not None
     }
 
-    # Step 2: Citation pattern
     citation_pattern = (
         r"\[Source:\s*(.*?),\s*Page:\s*(\d+)\]"
     )
 
     invalid_citations = []
 
-    # Step 3: Validate each citation
     def check_citation(match):
 
         source = match.group(1).strip()
@@ -172,19 +262,16 @@ def validate_citations(answer, metadatas):
         citation = (source, page)
 
         if citation in valid_sources:
-
             return match.group(0)
 
         invalid_citations.append(match.group(0))
 
         return "[Unverified citation]"
 
-    # Step 4: Replace invalid citations
     validated_answer = re.sub(
         citation_pattern,
         check_citation,
         answer
     )
 
-    # Step 5: Return results
     return validated_answer, invalid_citations

@@ -1,6 +1,4 @@
 
-import os
-
 import requests
 import streamlit as st
 
@@ -9,19 +7,7 @@ import streamlit as st
 # BACKEND CONFIGURATION
 # ================================================
 
-try:
-    API_URL = st.secrets.get("API_URL")
-except (
-    FileNotFoundError,
-    st.errors.StreamlitSecretNotFoundError
-):
-    API_URL = None
-
-API_URL = (
-    API_URL
-    or os.getenv("DOCUMIND_API_URL")
-    or "http://127.0.0.1:8000"
-).rstrip("/")
+API_URL = "http://127.0.0.1:8000"
 
 
 # ================================================
@@ -186,7 +172,6 @@ with st.sidebar:
                     "processed successfully!"
                 )
 
-
     st.divider()
 
 
@@ -208,7 +193,6 @@ with st.sidebar:
             "No documents uploaded in this session yet."
         )
 
-
     st.divider()
 
 
@@ -227,7 +211,6 @@ with st.sidebar:
         )
     )
 
-
     st.divider()
 
 
@@ -243,7 +226,6 @@ with st.sidebar:
         st.session_state.messages = []
 
         st.rerun()
-
 
     st.caption(
         "Powered by FastAPI • ChromaDB • Gemini"
@@ -342,7 +324,6 @@ if question:
 
         st.markdown(question)
 
-
     with st.chat_message("assistant"):
 
         with st.spinner(
@@ -360,7 +341,6 @@ if question:
                     timeout=300
                 )
 
-
                 if response.ok:
 
                     result = response.json()
@@ -370,7 +350,6 @@ if question:
                     sources = result.get("sources", [])
 
                     st.markdown(answer)
-
 
                     # DISPLAY SOURCES
 
@@ -391,7 +370,6 @@ if question:
                             "No source metadata was returned."
                         )
 
-
                     # SAVE ASSISTANT RESPONSE
 
                     st.session_state.messages.append({
@@ -399,7 +377,6 @@ if question:
                         "content": answer,
                         "sources": sources
                     })
-
 
                 else:
 
@@ -414,12 +391,10 @@ if question:
 
                         error_message = response.text
 
-
                     st.error(
                         f"API Error {response.status_code}: "
                         f"{error_message}"
                     )
-
 
             except requests.RequestException as error:
 

@@ -1,66 +1,142 @@
 
 import json
+import math
 from pathlib import Path
 
 from backend.retrieval import retrieve_with_rrf
 
 
-# ==========================================
+# ==================================================
 # 1. CONFIGURATION
-# ==========================================
+# ==================================================
 
 BASE_DIR = Path(__file__).resolve().parent
 
+QUESTIONS_FILE = BASE_DIR / "retrieval_questions.json"
 LABELS_FILE = BASE_DIR / "relevance_labels.json"
 OUTPUT_FILE = BASE_DIR / "retrieval_comparison.json"
 
+EVALUATION_SOURCE = "sample.pdf"
+
 FINAL_TOP_K = 5
 CANDIDATE_K = 40
+RRF_K = 60
 
-test_questions = [
-    "What is Artificial Intelligence?",
-    "What are the goals of Artificial Intelligence?",
-    "Explain Strong AI versus Weak AI.",
-    "What is the Turing Test?",
-    "What are the major parts of AI?"
-]
+SEARCH_MODE = "exact"
+
+TEST_QUESTION_IDS = ["Q01", "Q02", "Q03", "Q04", "Q05"]
 
 
-# ==========================================
-# 2. LOAD RELEVANCE LABELS
-# ==========================================
+# ==================================================
+# 2. LOAD EVALUATION DATA
+# ==================================================
 
-with open(
-    LABELS_FILE,
-    "r",
-    encoding="utf-8"
-) as file:
+def load_evaluation_data():
 
-    relevance_labels = json.load(file)
+    if not QUESTIONS_FILE.exists():
+        raise FileNotFoundError(
+            f"Questions file not found: {QUESTIONS_FILE}"
+        )
+
+    if not LABELS_FILE.exists():
+        raise FileNotFoundError(
+            f"Relevance labels not found: {LABELS_FILE}"
+        )
+
+    with open(QUESTIONS_FILE, "r", encoding="utf-8") as file:
+        question_data = json.load(file)
+
+    with open(LABELS_FILE, "r", encoding="utf-8") as file:
+        relevance_labels = json.load(file)
+
+    if not isinstance(question_data, list):
+        raise ValueError(
+            "Retrieval questions must be a JSON list."
+        )
+
+    if not isinstance(relevance_labels, dict):
+        raise ValueError(
+            "Relevance labels must be a JSON object."
+        )
+
+    question_map = {
+        item["id"]: item
+        for item in question_data
+    }
+
+    evaluation_questions = []
+
+    for question_id in TEST_QUESTION_IDS:
+
+        if question_id not in question_map:
+            print(f"Warning: Question {question_id} not found.")
+            continue
+
+        if question_id not in relevance_labels:
+            print(f"Warning: Labels for {question_id} not found.")
+            continue
+
+        item = question_map[question_id]
+
+        evaluation_questions.append({
+            "id": question_id,
+            "question": item["question"],
+            "labels": relevance_labels[question_id]
+        })
+
+    if not evaluation_questions:
+        raise ValueError(
+            "No matching evaluation questions and relevance labels found."
+        )
+
+    return evaluation_questions
 
 
-# ==========================================
-# 3. CALCULATE PRECISION@5
-# ==========================================
+# ==================================================
+# 3. PRECISION@K
+# ==================================================
 
 def precision_at_k(retrieved_ids, labels, k=5):
 
-    top_k = retrieved_ids[:k]
-
-    if not top_k:
+    if k <= 0:
         return 0.0
 
     relevant = sum(
-        1 for chunk_id in top_k
+        1
+        for chunk_id in retrieved_ids[:k]
         if labels.get(chunk_id, 0) > 0
     )
 
     return relevant / k
 
 
-# ==========================================
-# 4. CALCULATE NDCG@5
-# ==========================================
+# ==================================================
+# 4. RECALL@K
+# ==================================================
+
+def recall_at_k(retrieved_ids, labels, k=5):
+
+    relevant_ids = {
+        chunk_id
+        for chunk_id, score in labels.items()
+        if score > 0
+    }
+
+    if not relevant_ids:
+        return 0.0
+
+    retrieved_relevant = sum(
+        1
+        for chunk_id in retrieved_ids[:k]
+        if chunk_id in relevant_ids
+    )
+
+    return retrieved_relevant / len(relevant_ids)
+
+
+# ==================================================
+# 5. DCG@K AND NDCG@K
+# ==================================================
 
 def dcg_at_k(scores, k=5):
 
@@ -68,10 +144,9 @@ def dcg_at_k(scores, k=5):
 
     for rank, score in enumerate(scores[:k], start=1):
 
-        dcg += (
-            (2 ** score - 1)
-            / __import__("math").log2(rank + 1)
-        )
+        gain = (2 ** score) - 1
+
+        dcg += gain / math.log2(rank + 1)
 
     return dcg
 
@@ -97,9 +172,9 @@ def ndcg_at_k(retrieved_ids, labels, k=5):
     return actual_dcg / ideal_dcg
 
 
-# ==========================================
-# 5. RUN ONE RETRIEVAL METHOD
-# ==========================================
+# ==================================================
+# 6. RUN ONE RETRIEVAL METHOD
+# ==================================================
 
 def run_retrieval(question, use_reranker):
 
@@ -107,8 +182,11 @@ def run_retrieval(question, use_reranker):
         queries=[question],
         top_k=FINAL_TOP_K,
         candidate_k=CANDIDATE_K,
+        rrf_k=RRF_K,
         per_document=False,
-        rerank=use_reranker
+        rerank=use_reranker,
+        source=EVALUATION_SOURCE,
+        search_mode=SEARCH_MODE
     )
 
     retrieved_chunks = []
@@ -147,35 +225,49 @@ def run_retrieval(question, use_reranker):
     return retrieved_chunks
 
 
-# ==========================================
-# 6. EVALUATE BOTH METHODS
-# ==========================================
+# ==================================================
+# 7. EVALUATE BOTH METHODS
+# ==================================================
 
 def evaluate_comparison():
+
+    evaluation_questions = load_evaluation_data()
 
     comparison_results = []
 
     baseline_precision = []
     reranked_precision = []
 
+    baseline_recall = []
+    reranked_recall = []
+
     baseline_ndcg = []
     reranked_ndcg = []
 
     print("\n========== RETRIEVAL A/B COMPARISON ==========")
 
-    for question in test_questions:
+    print("Evaluation source:", EVALUATION_SOURCE)
+    print("Search mode:", SEARCH_MODE)
+    print("Questions:", len(evaluation_questions))
 
-        print("\nQuestion:", question)
+    for item in evaluation_questions:
 
-        labels = relevance_labels[question]
+        question_id = item["id"]
+        question = item["question"]
+        labels = item["labels"]
 
-        # Method A: RRF without cross-encoder
+        print("\n" + "=" * 60)
+        print("Question ID:", question_id)
+        print("Question:", question)
+        print("=" * 60)
+
+        # Method A: RRF without Cross-Encoder.
         baseline_chunks = run_retrieval(
             question,
             use_reranker=False
         )
 
-        # Method B: RRF with cross-encoder
+        # Method B: RRF with Cross-Encoder.
         reranked_chunks = run_retrieval(
             question,
             use_reranker=True
@@ -191,120 +283,120 @@ def evaluate_comparison():
             for chunk in reranked_chunks
         ]
 
-        # Calculate metrics
+        # Calculate baseline metrics.
         p_baseline = precision_at_k(
-            baseline_ids, labels
+            baseline_ids, labels, FINAL_TOP_K
         )
 
-        p_reranked = precision_at_k(
-            reranked_ids, labels
+        r_baseline = recall_at_k(
+            baseline_ids, labels, FINAL_TOP_K
         )
 
         n_baseline = ndcg_at_k(
-            baseline_ids, labels
+            baseline_ids, labels, FINAL_TOP_K
+        )
+
+        # Calculate reranked metrics.
+        p_reranked = precision_at_k(
+            reranked_ids, labels, FINAL_TOP_K
+        )
+
+        r_reranked = recall_at_k(
+            reranked_ids, labels, FINAL_TOP_K
         )
 
         n_reranked = ndcg_at_k(
-            reranked_ids, labels
+            reranked_ids, labels, FINAL_TOP_K
         )
 
         baseline_precision.append(p_baseline)
         reranked_precision.append(p_reranked)
 
+        baseline_recall.append(r_baseline)
+        reranked_recall.append(r_reranked)
+
         baseline_ndcg.append(n_baseline)
         reranked_ndcg.append(n_reranked)
 
         print("\nBaseline RRF:")
+        print("Retrieved IDs:", baseline_ids)
         print("Precision@5:", round(p_baseline, 4))
+        print("Recall@5:", round(r_baseline, 4))
         print("NDCG@5:", round(n_baseline, 4))
 
         print("\nRRF + Cross-Encoder:")
+        print("Retrieved IDs:", reranked_ids)
         print("Precision@5:", round(p_reranked, 4))
+        print("Recall@5:", round(r_reranked, 4))
         print("NDCG@5:", round(n_reranked, 4))
 
         comparison_results.append({
+            "question_id": question_id,
             "question": question,
+            "source": EVALUATION_SOURCE,
 
             "baseline": {
                 "retrieved_chunks": baseline_chunks,
                 "precision_at_5": p_baseline,
+                "recall_at_5": r_baseline,
                 "ndcg_at_5": n_baseline
             },
 
             "reranked": {
                 "retrieved_chunks": reranked_chunks,
                 "precision_at_5": p_reranked,
+                "recall_at_5": r_reranked,
                 "ndcg_at_5": n_reranked
             }
         })
 
-    # ======================================
-    # 7. AVERAGE COMPARISON
-    # ======================================
+    # ==================================================
+    # 8. AVERAGE COMPARISON
+    # ==================================================
+
+    count = len(evaluation_questions)
 
     averages = {
         "baseline": {
-            "precision_at_5": (
-                sum(baseline_precision)
-                / len(baseline_precision)
-            ),
-            "ndcg_at_5": (
-                sum(baseline_ndcg)
-                / len(baseline_ndcg)
-            )
+            "precision_at_5": sum(baseline_precision) / count,
+            "recall_at_5": sum(baseline_recall) / count,
+            "ndcg_at_5": sum(baseline_ndcg) / count
         },
 
         "reranked": {
-            "precision_at_5": (
-                sum(reranked_precision)
-                / len(reranked_precision)
-            ),
-            "ndcg_at_5": (
-                sum(reranked_ndcg)
-                / len(reranked_ndcg)
-            )
+            "precision_at_5": sum(reranked_precision) / count,
+            "recall_at_5": sum(reranked_recall) / count,
+            "ndcg_at_5": sum(reranked_ndcg) / count
         }
     }
 
     print("\n========== AVERAGE COMPARISON ==========")
 
-    print("\nBaseline RRF:")
-    print(
-        "Precision@5:",
-        round(averages["baseline"]["precision_at_5"], 4)
-    )
-    print(
-        "NDCG@5:",
-        round(averages["baseline"]["ndcg_at_5"], 4)
-    )
+    for method, metrics in averages.items():
 
-    print("\nRRF + Cross-Encoder:")
-    print(
-        "Precision@5:",
-        round(averages["reranked"]["precision_at_5"], 4)
-    )
-    print(
-        "NDCG@5:",
-        round(averages["reranked"]["ndcg_at_5"], 4)
-    )
+        print(f"\n{method.upper()}")
 
-    # ======================================
-    # 8. SAVE COMPARISON REPORT
-    # ======================================
+        for metric, value in metrics.items():
+            print(f"{metric}: {value:.4f}")
+
+    # ==================================================
+    # 9. SAVE COMPARISON REPORT
+    # ==================================================
 
     final_report = {
-        "questions_evaluated": len(comparison_results),
+        "questions_evaluated": count,
+        "question_ids": [
+            item["id"] for item in evaluation_questions
+        ],
+        "evaluation_source": EVALUATION_SOURCE,
+        "search_mode": SEARCH_MODE,
         "candidate_k": CANDIDATE_K,
         "final_top_k": FINAL_TOP_K,
         "averages": averages,
         "results": comparison_results
     }
 
-    with open(
-        OUTPUT_FILE,
-        "w",
-        encoding="utf-8"
-    ) as file:
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
 
         json.dump(
             final_report,
@@ -317,9 +409,9 @@ def evaluate_comparison():
     print(OUTPUT_FILE)
 
 
-# ==========================================
-# 9. EXECUTION
-# ==========================================
+# ==================================================
+# 10. EXECUTION
+# ==================================================
 
 if __name__ == "__main__":
     evaluate_comparison()

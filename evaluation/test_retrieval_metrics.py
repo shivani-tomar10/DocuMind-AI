@@ -1,34 +1,79 @@
 
-import json
-from pathlib import Path
+from backend.retrieval import retrieve_with_rrf
+import math
 
 
 # ==================================================
-# 1. LOAD RELEVANCE LABELS
+# 1. CONFIGURATION
 # ==================================================
 
-BASE_DIR = Path(__file__).resolve().parent
+EVALUATION_SOURCE = "sample.pdf"
 
-LABELS_FILE = BASE_DIR / "relevance_labels.json"
+TOP_K = 5
+CANDIDATE_K = 40
+RRF_K = 60
 
-with open(LABELS_FILE, "r", encoding="utf-8") as file:
-    relevance_labels = json.load(file)
+# Relevance scores:
+# 2 = Highly relevant
+# 1 = Partially relevant
+# 0 = Not relevant
+
+RELEVANCE_LABELS = {
+    "What is Artificial Intelligence?": {
+        "sample_p23_chunk3": 2,
+        "sample_p21_chunk1": 1,
+        "sample_p23_chunk1": 2,
+        "sample_p20_chunk3": 1,
+        "sample_p8_chunk1": 1
+    },
+
+    "What are the goals of Artificial Intelligence?": {
+        "sample_p23_chunk1": 2,
+        "sample_p20_chunk3": 1,
+        "sample_p33_chunk3": 1,
+        "sample_p2_chunk1": 0,
+        "sample_p21_chunk1": 0
+    },
+
+    "Explain Strong AI versus Weak AI.": {
+        "sample_p23_chunk4": 2,
+        "sample_p23_chunk6": 2,
+        "sample_p24_chunk1": 2,
+        "sample_p41_chunk2": 1,
+        "sample_p20_chunk3": 1
+    },
+
+    "What is the Turing Test?": {
+        "sample_p24_chunk3": 2,
+        "sample_p25_chunk1": 1,
+        "sample_p20_chunk3": 1,
+        "sample_p24_chunk2": 1,
+        "sample_p24_chunk5": 2
+    },
+
+    "What are the major parts of AI?": {
+        "sample_p37_chunk2": 2,
+        "sample_p8_chunk2": 2,
+        "sample_p41_chunk3": 2,
+        "sample_p20_chunk3": 1,
+        "sample_p37_chunk4": 1
+    }
+}
 
 
 # ==================================================
 # 2. PRECISION@K
 # ==================================================
 
-def precision_at_k(retrieved_ids, labels, k=5):
+def precision_at_k(retrieved_ids, relevance, k=5):
 
-    top_k_ids = retrieved_ids[:k]
-
-    if not top_k_ids:
+    if k <= 0:
         return 0.0
 
     relevant_count = sum(
-        1 for chunk_id in top_k_ids
-        if labels.get(chunk_id, 0) > 0
+        1
+        for chunk_id in retrieved_ids[:k]
+        if relevance.get(chunk_id, 0) > 0
     )
 
     return relevant_count / k
@@ -38,124 +83,163 @@ def precision_at_k(retrieved_ids, labels, k=5):
 # 3. RECALL@K
 # ==================================================
 
-def recall_at_k(retrieved_ids, labels, k=5):
+def recall_at_k(retrieved_ids, relevance, k=5):
 
-    top_k_ids = retrieved_ids[:k]
-
-    total_relevant = sum(
-        1 for score in labels.values()
+    relevant_ids = {
+        chunk_id
+        for chunk_id, score in relevance.items()
         if score > 0
-    )
+    }
 
-    if total_relevant == 0:
+    if not relevant_ids:
         return 0.0
 
     retrieved_relevant = sum(
-        1 for chunk_id in top_k_ids
-        if labels.get(chunk_id, 0) > 0
+        1
+        for chunk_id in retrieved_ids[:k]
+        if chunk_id in relevant_ids
     )
 
-    return retrieved_relevant / total_relevant
+    return retrieved_relevant / len(relevant_ids)
 
 
 # ==================================================
 # 4. NDCG@K
 # ==================================================
 
-def dcg_at_k(relevance_scores, k=5):
+def ndcg_at_k(retrieved_ids, relevance, k=5):
 
     dcg = 0.0
 
-    for index, score in enumerate(relevance_scores[:k]):
+    for rank, chunk_id in enumerate(retrieved_ids[:k], start=1):
 
-        rank = index + 1
+        relevance_score = relevance.get(chunk_id, 0)
 
-        dcg += score / (
-            __import__("math").log2(rank + 1)
-        )
-
-    return dcg
-
-
-def ndcg_at_k(retrieved_ids, labels, k=5):
-
-    actual_scores = [
-        labels.get(chunk_id, 0)
-        for chunk_id in retrieved_ids[:k]
-    ]
+        dcg += relevance_score / math.log2(rank + 1)
 
     ideal_scores = sorted(
-        labels.values(),
+        relevance.values(),
         reverse=True
     )[:k]
 
-    actual_dcg = dcg_at_k(actual_scores, k)
-    ideal_dcg = dcg_at_k(ideal_scores, k)
+    idcg = sum(
+        score / math.log2(rank + 1)
+        for rank, score in enumerate(ideal_scores, start=1)
+    )
 
-    if ideal_dcg == 0:
+    if idcg == 0:
         return 0.0
 
-    return actual_dcg / ideal_dcg
+    return dcg / idcg
 
 
 # ==================================================
-# 5. CALCULATE METRICS
+# 5. EVALUATE RETRIEVAL
 # ==================================================
 
-def evaluate_metrics():
-
-    print("\n========== RETRIEVAL METRICS ==========")
+def evaluate_retrieval():
 
     precision_scores = []
     recall_scores = []
     ndcg_scores = []
 
-    for question, labels in relevance_labels.items():
+    print("=" * 65)
+    print("DOCUMIND AI - RETRIEVAL METRICS EVALUATION")
+    print("=" * 65)
 
-        retrieved_ids = list(labels.keys())
+    print("Evaluation PDF:", EVALUATION_SOURCE)
+    print("Search mode: Exact NumPy L2")
+    print("Top K:", TOP_K)
+    print("Candidate K:", CANDIDATE_K)
 
+    for question, relevance in RELEVANCE_LABELS.items():
+
+        print("\n" + "=" * 65)
+        print("QUESTION:", question)
+        print("=" * 65)
+
+        # Retrieve actual chunks using exact search.
+        results = retrieve_with_rrf(
+            queries=[question],
+            top_k=TOP_K,
+            candidate_k=CANDIDATE_K,
+            rrf_k=RRF_K,
+            per_document=False,
+            rerank=True,
+            source=EVALUATION_SOURCE,
+            search_mode="exact"
+        )
+
+        retrieved_ids = results["ids"][0]
+
+        print("\nRetrieved count:", len(retrieved_ids))
+        print("Retrieved IDs:", retrieved_ids)
+
+        if not retrieved_ids:
+            print("WARNING: No chunks retrieved.")
+
+        # Calculate metrics.
         precision = precision_at_k(
-            retrieved_ids, labels, k=5
+            retrieved_ids,
+            relevance,
+            TOP_K
         )
 
         recall = recall_at_k(
-            retrieved_ids, labels, k=5
+            retrieved_ids,
+            relevance,
+            TOP_K
         )
 
         ndcg = ndcg_at_k(
-            retrieved_ids, labels, k=5
+            retrieved_ids,
+            relevance,
+            TOP_K
         )
 
         precision_scores.append(precision)
         recall_scores.append(recall)
         ndcg_scores.append(ndcg)
 
-        print("\nQuestion:", question)
-        print("Precision@5:", round(precision, 4))
+        print("\nPrecision@5:", round(precision, 4))
         print("Recall@5:", round(recall, 4))
         print("NDCG@5:", round(ndcg, 4))
 
-    print("\n========== AVERAGE METRICS ==========")
+    # ==================================================
+    # 6. FINAL AVERAGE METRICS
+    # ==================================================
 
-    print(
-        "Average Precision@5:",
-        round(sum(precision_scores) / len(precision_scores), 4)
-    )
+    total_questions = len(RELEVANCE_LABELS)
 
-    print(
-        "Average Recall@5:",
-        round(sum(recall_scores) / len(recall_scores), 4)
-    )
+    if total_questions == 0:
+        print("\nNo evaluation questions available.")
+        return
 
-    print(
-        "Average NDCG@5:",
-        round(sum(ndcg_scores) / len(ndcg_scores), 4)
-    )
+    average_precision = sum(precision_scores) / total_questions
+    average_recall = sum(recall_scores) / total_questions
+    average_ndcg = sum(ndcg_scores) / total_questions
+
+    print("\n" + "=" * 65)
+    print("FINAL AVERAGE RETRIEVAL METRICS")
+    print("=" * 65)
+
+    print("Total questions:", total_questions)
+
+    print("Average Precision@5:",
+          round(average_precision, 4))
+
+    print("Average Recall@5:",
+          round(average_recall, 4))
+
+    print("Average NDCG@5:",
+          round(average_ndcg, 4))
+
+    print("=" * 65)
 
 
 # ==================================================
-# 6. RUN EVALUATION
+# 7. MAIN
 # ==================================================
 
 if __name__ == "__main__":
-    evaluate_metrics()
+    evaluate_retrieval()

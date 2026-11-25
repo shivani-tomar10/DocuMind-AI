@@ -31,3 +31,11 @@ htmlcov/
 # Operating system files
 .DS_Store
 .vercel
+
+# Local backup files
+backend/*_backup.py
+evaluation/*_before_*.json
+
+# Local backup files
+backend/*_backup.py
+evaluation/*_before_*.json

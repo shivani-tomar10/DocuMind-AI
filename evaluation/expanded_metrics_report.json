@@ -1,10 +1,13 @@
 {
     "total_questions": 20,
+    "top_k": 5,
     "answerable_questions": 18,
     "unanswerable_questions": 2,
     "average_precision_at_5": 0.8333,
     "average_ndcg_at_5": 0.9087,
-    "average_unanswerable_retrieval_false_positive_rate": 0.0,
+    "average_unanswerable_non_relevant_retrieval_rate": 1.0,
+    "ndcg_method": "Exponential gain: (2^relevance - 1)",
+    "unanswerable_metric_note": "Measures the proportion of judged retrieved chunks labeled non-relevant (grade 0) for unanswerable questions. Unjudged chunks are excluded.",
     "recall_at_5": null,
     "recall_note": "Recall@5 is not calculated because the complete set of relevant chunks in the corpus has not been judged.",
     "question_results": [
@@ -13,14 +16,14 @@
             "question": "What is Artificial Intelligence?",
             "answerable": true,
             "precision_at_5": 0.8,
-            "ndcg_at_5": 0.9550337350142764
+            "ndcg_at_5": 0.955
         },
         {
             "id": "Q02",
             "question": "What are the goals of Artificial Intelligence?",
             "answerable": true,
             "precision_at_5": 0.6,
-            "ndcg_at_5": 0.9726097514324383
+            "ndcg_at_5": 0.9726
         },
         {
             "id": "Q03",
@@ -34,98 +37,98 @@
             "question": "What is the Turing Test?",
             "answerable": true,
             "precision_at_5": 0.8,
-            "ndcg_at_5": 0.946493202248989
+            "ndcg_at_5": 0.9465
         },
         {
             "id": "Q05",
             "question": "What are the major parts of AI?",
             "answerable": true,
             "precision_at_5": 1.0,
-            "ndcg_at_5": 0.9322978750325865
+            "ndcg_at_5": 0.9323
         },
         {
             "id": "Q06",
             "question": "What is the relationship between Machine Learning and Artificial Intelligence?",
             "answerable": true,
             "precision_at_5": 0.2,
-            "ndcg_at_5": 0.38685280723454163
+            "ndcg_at_5": 0.3869
         },
         {
             "id": "Q07",
             "question": "What is Deep Learning?",
             "answerable": true,
             "precision_at_5": 1.0,
-            "ndcg_at_5": 0.9130689212173096
+            "ndcg_at_5": 0.9131
         },
         {
             "id": "Q08",
             "question": "What is Natural Language Processing?",
             "answerable": true,
             "precision_at_5": 1.0,
-            "ndcg_at_5": 0.8389776660073724
+            "ndcg_at_5": 0.839
         },
         {
             "id": "Q09",
             "question": "What are expert systems in Artificial Intelligence?",
             "answerable": true,
             "precision_at_5": 1.0,
-            "ndcg_at_5": 0.9578347709816888
+            "ndcg_at_5": 0.9578
         },
         {
             "id": "Q10",
             "question": "What is Reinforcement Learning?",
             "answerable": true,
             "precision_at_5": 1.0,
-            "ndcg_at_5": 0.9686152031181796
+            "ndcg_at_5": 0.9686
         },
         {
             "id": "Q11",
             "question": "What is SQL?",
             "answerable": true,
             "precision_at_5": 0.8,
-            "ndcg_at_5": 0.828576998918179
+            "ndcg_at_5": 0.8286
         },
         {
             "id": "Q12",
             "question": "What are SQL joins?",
             "answerable": true,
             "precision_at_5": 1.0,
-            "ndcg_at_5": 0.9686152031181796
+            "ndcg_at_5": 0.9686
         },
         {
             "id": "Q13",
             "question": "What is the difference between SQL and MySQL?",
             "answerable": true,
             "precision_at_5": 0.8,
-            "ndcg_at_5": 0.946493202248989
+            "ndcg_at_5": 0.9465
         },
         {
             "id": "Q14",
             "question": "What is a database transaction in SQL?",
             "answerable": true,
             "precision_at_5": 0.8,
-            "ndcg_at_5": 0.8893127636718536
+            "ndcg_at_5": 0.8893
         },
         {
             "id": "Q15",
             "question": "How do transactions maintain data consistency and integrity in SQL?",
             "answerable": true,
             "precision_at_5": 1.0,
-            "ndcg_at_5": 0.9807710461847231
+            "ndcg_at_5": 0.9808
         },
         {
             "id": "Q16",
             "question": "What is the purpose of the COMMIT command in SQL?",
             "answerable": true,
             "precision_at_5": 0.6,
-            "ndcg_at_5": 0.8810783669439536
+            "ndcg_at_5": 0.8811
         },
         {
             "id": "Q17",
             "question": "What is the purpose of the ROLLBACK command in SQL?",
             "answerable": true,
             "precision_at_5": 0.8,
-            "ndcg_at_5": 0.9903929125301808
+            "ndcg_at_5": 0.9904
         },
         {
             "id": "Q18",
@@ -138,15 +141,19 @@
             "id": "Q19",
             "question": "What is the current population of India?",
             "answerable": false,
-            "precision_at_5": 0.0,
-            "ndcg_at_5": null
+            "non_relevant_retrieval_rate": 1.0,
+            "non_relevant_chunks": 5,
+            "judged_chunks": 5,
+            "unjudged_chunks": 0
         },
         {
             "id": "Q20",
             "question": "Who is the current Prime Minister of India?",
             "answerable": false,
-            "precision_at_5": 0.0,
-            "ndcg_at_5": null
+            "non_relevant_retrieval_rate": 1.0,
+            "non_relevant_chunks": 5,
+            "judged_chunks": 5,
+            "unjudged_chunks": 0
         }
     ]
 }

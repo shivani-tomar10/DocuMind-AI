@@ -16,10 +16,10 @@ Built using **Retrieval-Augmented Generation (RAG)**, the application retrieves 
 - **Multi-Query Retrieval:** Generate alternative search queries to improve retrieval coverage.
 - **Reciprocal Rank Fusion (RRF):** Combine rankings from multiple search queries.
 - **Cross-Encoder Reranking:** Improve the ordering of retrieved passages.
-- **Document-Balanced Retrieval:** Retrieve relevant information across multiple uploaded documents.
+- **Document-Balanced Retrieval:** Balance retrieved candidates across indexed PDF documents.
 - **Context-Aware Generation:** Generate answers using Google's Gemini model.
 - **Source Citations:** Display document names and page numbers supporting generated answers.
-- **Hallucination Prevention:** Return an abstention response when the uploaded documents do not contain the requested information.
+- **Grounded Responses:** Use retrieved document context and abstain when sufficient supporting information is unavailable.
 - **Interactive Interface:** Chat with uploaded documents through Streamlit.
 
 ---
@@ -72,25 +72,30 @@ flowchart TD
 ## 🔄 RAG Pipeline
 
 ### 1. Document Ingestion
+
 - Accept PDF documents through the upload interface.
 - Extract text page by page.
 - Preserve source filename and page number as metadata.
 
 ### 2. Text Chunking
+
 - Split extracted text into smaller chunks.
 - Chunk size: 500 characters.
 - Chunk overlap: 50 characters.
 - Preserve metadata for source traceability.
 
 ### 3. Embedding Generation
+
 - Use the `all-MiniLM-L6-v2` Sentence Transformer model.
 - Convert text chunks into 384-dimensional vector embeddings.
 
 ### 4. Vector Storage
+
 - Store embeddings, text, and metadata in ChromaDB.
 - Use persistent storage for document retrieval across application restarts.
 
 ### 5. Retrieval and Reranking
+
 - Generate alternative search queries.
 - Retrieve semantically relevant chunks.
 - Combine rankings using Reciprocal Rank Fusion.
@@ -98,11 +103,13 @@ flowchart TD
 - Expand selected chunks with neighboring passages where available.
 
 ### 6. Answer Generation
+
 - Construct context from retrieved passages.
 - Send the original question and retrieved context to Gemini.
 - Generate an answer grounded in the supplied documents.
 
 ### 7. Citation Validation
+
 - Validate generated source-page references against retrieved metadata.
 - Flag unverified citations.
 - Hide source metadata when the application returns its configured abstention response.
@@ -164,7 +171,7 @@ DocuMind-AI/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/DocuMind-AI.git
+git clone https://github.com/shivani-tomar10/DocuMind-AI.git
 
 cd DocuMind-AI
 ```
@@ -335,7 +342,6 @@ The initial evaluation covered seven answerable questions with available referen
 - User authentication and document-level access control.
 - Conversation memory and chat history.
 - Automated evaluation and regression testing.
-- Cloud deployment and scalable vector storage.
 
 ---
 
@@ -345,12 +351,12 @@ The initial evaluation covered seven answerable questions with available referen
 
 AI/ML Engineer | Python | RAG | FastAPI | Generative AI
 
-GitHub: https://github.com/shivani-tomar10
+GitHub: https://github.com/shivani-tomar10/
 
 LinkedIn: https://www.linkedin.com/in/shivani-tomar10/
 
 ---
 
-## 📄 License
+## 📄 Project Usage
 
-This project is intended for educational, portfolio, and research purposes. Add a suitable open-source license before distributing it publicly.
+This project is intended for educational, portfolio, and research purposes.

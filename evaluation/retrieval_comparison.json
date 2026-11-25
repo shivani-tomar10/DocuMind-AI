@@ -1,20 +1,33 @@
 {
     "questions_evaluated": 5,
+    "question_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05"
+    ],
+    "evaluation_source": "sample.pdf",
+    "search_mode": "exact",
     "candidate_k": 40,
     "final_top_k": 5,
     "averages": {
         "baseline": {
-            "precision_at_5": 0.72,
-            "ndcg_at_5": 0.7383229399871964
+            "precision_at_5": 0.6,
+            "recall_at_5": 0.7133333333333333,
+            "ndcg_at_5": 0.6457562799337422
         },
         "reranked": {
-            "precision_at_5": 0.9199999999999999,
-            "ndcg_at_5": 0.9758462183671524
+            "precision_at_5": 0.8400000000000001,
+            "recall_at_5": 1.0,
+            "ndcg_at_5": 0.961286912745658
         }
     },
     "results": [
         {
+            "question_id": "Q01",
             "question": "What is Artificial Intelligence?",
+            "source": "sample.pdf",
             "baseline": {
                 "retrieved_chunks": [
                     {
@@ -23,7 +36,7 @@
                         "source": "sample.pdf",
                         "page_number": 21,
                         "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
-                        "distance": 0.5889755487442017
+                        "distance": 0.7674474120140076
                     },
                     {
                         "rank": 2,
@@ -31,7 +44,7 @@
                         "source": "sample.pdf",
                         "page_number": 8,
                         "document": "Preface\b\nxv\nChapter 1:  Introduction to AI\b\n1\n\t\nWhat is Artificial Intelligence? \b\n2\nStrong AI versus Weak AI \b\n4\n\t\nThe Turing Test\b\n5\nDefinition of the Turing Test\b\n5\nAn Interrogator Test\b\n6\n\t\nHeuristics\b\n6\nGenetic Algorithms\b\n8\n\t\nKnowledge Representation\b\n8\nLogic-based Solutions\b\n9\nSemantic Networks\b\n9\n\t\nAI and Games\b\n10\nThe Success of AlphaZero\b\n11\n\t\nExpert Systems \b\n12\n\t\nNeural Computing\b\n13\n\t\nEvolutionary Computation\b\n14\n\t\nNatural Language Processing\b\n14\n\t\nBioinformatics\b\n17",
-                        "distance": 0.6763912439346313
+                        "distance": 0.8224300742149353
                     },
                     {
                         "rank": 3,
@@ -39,7 +52,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 0.6863884925842285
+                        "distance": 0.8284856677055359
                     },
                     {
                         "rank": 4,
@@ -47,7 +60,7 @@
                         "source": "sample.pdf",
                         "page_number": 21,
                         "document": "ative connotation of being an inferior substitute. However, artificial objects \n(e.g., flowers) can closely approximate their counterparts, and sometimes \nthey can be advantageous when they do not have any maintenance require­\nments (sunshine, water, and so forth).\nBy contrast, a definition for intelligence is more elusive than a defini­\ntion of the word artificial. R. Sternberg, in a text on human consciousness, \nprovides the following useful definition: “Intelligence is the cognitive abil­",
-                        "distance": 0.7212677001953125
+                        "distance": 0.8492748141288757
                     },
                     {
                         "rank": 5,
@@ -55,11 +68,12 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "quent chapters.\nKeep in mind that many AI-focused books tend to discuss AI from the \nperspective of computer science and a discussion of traditional algorithms \nand data structures. By contrast, this book treats AI as an “umbrella” for \nmachine learning and deep learning, and therefore it’s discussed in a cur­\nsory manner as a precursor to the other chapters.\nThe first part of this chapter starts with a discussion regarding the term",
-                        "distance": 0.7692062854766846
+                        "distance": 0.8770440816879272
                     }
                 ],
-                "precision_at_5": 0.6,
-                "ndcg_at_5": 0.3431272824944109
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.5,
+                "ndcg_at_5": 0.2575785703353275
             },
             "reranked": {
                 "retrieved_chunks": [
@@ -69,7 +83,7 @@
                         "source": "sample.pdf",
                         "page_number": 23,
                         "document": "therefore must be more intelligent than humans. The truth is most likely \nsomewhere between these two extremes. As we have discussed, different \nanimal species possess intelligence to varying degrees. However, we are \nmore interested in a test to ascertain the existence of machine intelligence \nthan in developing standardized IQ tests for animals. Perhaps Raphael put \nit best: artificial intelligence is the science of making machines do things \nthat would require intelligence if done by man.",
-                        "distance": 1.0136812925338745,
+                        "distance": 1.0068174600601196,
                         "rerank_score": 6.485642910003662
                     },
                     {
@@ -78,7 +92,7 @@
                         "source": "sample.pdf",
                         "page_number": 21,
                         "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
-                        "distance": 0.5889755487442017,
+                        "distance": 0.7674474120140076,
                         "rerank_score": 6.340223789215088
                     },
                     {
@@ -87,7 +101,7 @@
                         "source": "sample.pdf",
                         "page_number": 23,
                         "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
-                        "distance": 0.804521918296814,
+                        "distance": 0.89695143699646,
                         "rerank_score": 5.904476642608643
                     },
                     {
@@ -96,7 +110,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 0.6863884925842285,
+                        "distance": 0.8284856677055359,
                         "rerank_score": 5.583782196044922
                     },
                     {
@@ -105,16 +119,19 @@
                         "source": "sample.pdf",
                         "page_number": 8,
                         "document": "Preface\b\nxv\nChapter 1:  Introduction to AI\b\n1\n\t\nWhat is Artificial Intelligence? \b\n2\nStrong AI versus Weak AI \b\n4\n\t\nThe Turing Test\b\n5\nDefinition of the Turing Test\b\n5\nAn Interrogator Test\b\n6\n\t\nHeuristics\b\n6\nGenetic Algorithms\b\n8\n\t\nKnowledge Representation\b\n8\nLogic-based Solutions\b\n9\nSemantic Networks\b\n9\n\t\nAI and Games\b\n10\nThe Success of AlphaZero\b\n11\n\t\nExpert Systems \b\n12\n\t\nNeural Computing\b\n13\n\t\nEvolutionary Computation\b\n14\n\t\nNatural Language Processing\b\n14\n\t\nBioinformatics\b\n17",
-                        "distance": 0.6763912439346313,
+                        "distance": 0.8224300742149353,
                         "rerank_score": 4.814140319824219
                     }
                 ],
-                "precision_at_5": 1.0,
-                "ndcg_at_5": 0.9578347709816888
+                "precision_at_5": 0.8,
+                "recall_at_5": 1.0,
+                "ndcg_at_5": 0.9550337350142764
             }
         },
         {
+            "question_id": "Q02",
             "question": "What are the goals of Artificial Intelligence?",
+            "source": "sample.pdf",
             "baseline": {
                 "retrieved_chunks": [
                     {
@@ -123,7 +140,7 @@
                         "source": "sample.pdf",
                         "page_number": 33,
                         "document": "ation of a human-level Artificial Intelligence, which he aptly cites as the \nholy grail of AI research, renounces reliance on the symbol-based approach. \nThis latter approach relies upon the use of heuristics and representational \nparadigms. \nIn his view, intelligent systems can be designed in multiple layers in \nwhich higher leveled layers rely upon those layers beneath them. For \nexample, if you wanted to build a robot capable of avoiding obstacles, the",
-                        "distance": 0.907075047492981
+                        "distance": 0.9524048566818237
                     },
                     {
                         "rank": 2,
@@ -131,7 +148,7 @@
                         "source": "sample.pdf",
                         "page_number": 23,
                         "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
-                        "distance": 0.9102974534034729
+                        "distance": 0.9540951251983643
                     },
                     {
                         "rank": 3,
@@ -139,7 +156,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 0.9248709082603455
+                        "distance": 0.9617021083831787
                     },
                     {
                         "rank": 4,
@@ -147,7 +164,7 @@
                         "source": "sample.pdf",
                         "page_number": 31,
                         "document": "12 • Artificial Intelligence, Machine Learning, Deep Learning\nExpert Systems\nExpert systems are one of the areas that have been investigated for almost \nas long as AI itself has existed. It is one discipline that AI can claim as a \ngreat success. Expert systems have many characteristics that make them \ndesirable for AI research and development. These include separation of \nthe knowledge base from the inference engine, being more than the sum of",
-                        "distance": 0.9484747052192688
+                        "distance": 0.9738966822624207
                     },
                     {
                         "rank": 5,
@@ -155,11 +172,12 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "Introduction to AI • 5\nHence, proponents of weak AI measure the success of the systems that \nthey build based on their performance alone. They maintain that the raison \nd’etre of AI research is to solve difficult problems regardless of how they \nare actually solved.\nOn the other hand, proponents of strong AI are concerned with the \nstructure of the systems they build. They maintain that by sheer dint of \npossessing heuristics, algorithms, and knowledge of AI programs, computers",
-                        "distance": 0.9508553743362427
+                        "distance": 0.9751181602478027
                     }
                 ],
-                "precision_at_5": 0.6,
-                "ndcg_at_5": 0.8213137146137828
+                "precision_at_5": 0.4,
+                "recall_at_5": 0.6666666666666666,
+                "ndcg_at_5": 0.5792374606819809
             },
             "reranked": {
                 "retrieved_chunks": [
@@ -169,7 +187,7 @@
                         "source": "sample.pdf",
                         "page_number": 23,
                         "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
-                        "distance": 0.9102974534034729,
+                        "distance": 0.9540951251983643,
                         "rerank_score": 8.664230346679688
                     },
                     {
@@ -178,7 +196,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 0.9248709082603455,
+                        "distance": 0.9617021083831787,
                         "rerank_score": 1.5186069011688232
                     },
                     {
@@ -187,7 +205,7 @@
                         "source": "sample.pdf",
                         "page_number": 33,
                         "document": "ation of a human-level Artificial Intelligence, which he aptly cites as the \nholy grail of AI research, renounces reliance on the symbol-based approach. \nThis latter approach relies upon the use of heuristics and representational \nparadigms. \nIn his view, intelligent systems can be designed in multiple layers in \nwhich higher leveled layers rely upon those layers beneath them. For \nexample, if you wanted to build a robot capable of avoiding obstacles, the",
-                        "distance": 0.907075047492981,
+                        "distance": 0.9524048566818237,
                         "rerank_score": 1.2647056579589844
                     },
                     {
@@ -196,7 +214,7 @@
                         "source": "sample.pdf",
                         "page_number": 2,
                         "document": "Artificial Intelligence\nMachine Learning\nand\nDeep Learning",
-                        "distance": 1.1093738079071045,
+                        "distance": 1.0532681941986084,
                         "rerank_score": 1.0598030090332031
                     },
                     {
@@ -205,16 +223,19 @@
                         "source": "sample.pdf",
                         "page_number": 21,
                         "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
-                        "distance": 1.0203992128372192,
+                        "distance": 1.0101481676101685,
                         "rerank_score": 0.42045843601226807
                     }
                 ],
                 "precision_at_5": 0.6,
-                "ndcg_at_5": 1.0
+                "recall_at_5": 1.0,
+                "ndcg_at_5": 0.9726097514324383
             }
         },
         {
+            "question_id": "Q03",
             "question": "Explain Strong AI versus Weak AI.",
+            "source": "sample.pdf",
             "baseline": {
                 "retrieved_chunks": [
                     {
@@ -223,7 +244,7 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "Introduction to AI • 5\nHence, proponents of weak AI measure the success of the systems that \nthey build based on their performance alone. They maintain that the raison \nd’etre of AI research is to solve difficult problems regardless of how they \nare actually solved.\nOn the other hand, proponents of strong AI are concerned with the \nstructure of the systems they build. They maintain that by sheer dint of \npossessing heuristics, algorithms, and knowledge of AI programs, computers",
-                        "distance": 0.4849235415458679
+                        "distance": 0.6963645219802856
                     },
                     {
                         "rank": 2,
@@ -231,7 +252,7 @@
                         "source": "sample.pdf",
                         "page_number": 23,
                         "document": "that would require intelligence if done by man.\nStrong AI versus Weak AI \nCurrently there are two main camp regarding AI. The weak AI approach \nis associated with the Massachusetts Institute of Technology, and it views \nany system that exhibits intelligent behavior as an example of AI. This camp \nfocuses on whether a program performs correctly, regardless of whether \nthe artifact performs its task in the same way humans do. The results of AI",
-                        "distance": 0.667065441608429
+                        "distance": 0.8167407512664795
                     },
                     {
                         "rank": 3,
@@ -239,7 +260,7 @@
                         "source": "sample.pdf",
                         "page_number": 23,
                         "document": "capable of hearing: proponents of strong AI might aim to achieve success by \nsimulating the human hearing system, whereas weak AI proponents would \nbe concerned merely with the system’s performance. This simulation would \ninclude the equivalents to cochlea, hearing canal, eardrum, and other parts \nof the ear, each performing its required tasks in the system.",
-                        "distance": 0.7546792030334473
+                        "distance": 0.8687227368354797
                     },
                     {
                         "rank": 4,
@@ -247,7 +268,7 @@
                         "source": "sample.pdf",
                         "page_number": 8,
                         "document": "Preface\b\nxv\nChapter 1:  Introduction to AI\b\n1\n\t\nWhat is Artificial Intelligence? \b\n2\nStrong AI versus Weak AI \b\n4\n\t\nThe Turing Test\b\n5\nDefinition of the Turing Test\b\n5\nAn Interrogator Test\b\n6\n\t\nHeuristics\b\n6\nGenetic Algorithms\b\n8\n\t\nKnowledge Representation\b\n8\nLogic-based Solutions\b\n9\nSemantic Networks\b\n9\n\t\nAI and Games\b\n10\nThe Success of AlphaZero\b\n11\n\t\nExpert Systems \b\n12\n\t\nNeural Computing\b\n13\n\t\nEvolutionary Computation\b\n14\n\t\nNatural Language Processing\b\n14\n\t\nBioinformatics\b\n17",
-                        "distance": 0.7669767141342163
+                        "distance": 0.8757720589637756
                     },
                     {
                         "rank": 5,
@@ -255,10 +276,11 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 0.8082983493804932
+                        "distance": 0.8990541696548462
                     }
                 ],
                 "precision_at_5": 0.8,
+                "recall_at_5": 0.8,
                 "ndcg_at_5": 0.9402694138204842
             },
             "reranked": {
@@ -269,7 +291,7 @@
                         "source": "sample.pdf",
                         "page_number": 23,
                         "document": "that would require intelligence if done by man.\nStrong AI versus Weak AI \nCurrently there are two main camp regarding AI. The weak AI approach \nis associated with the Massachusetts Institute of Technology, and it views \nany system that exhibits intelligent behavior as an example of AI. This camp \nfocuses on whether a program performs correctly, regardless of whether \nthe artifact performs its task in the same way humans do. The results of AI",
-                        "distance": 0.667065441608429,
+                        "distance": 0.8167407512664795,
                         "rerank_score": 8.957172393798828
                     },
                     {
@@ -278,7 +300,7 @@
                         "source": "sample.pdf",
                         "page_number": 23,
                         "document": "capable of hearing: proponents of strong AI might aim to achieve success by \nsimulating the human hearing system, whereas weak AI proponents would \nbe concerned merely with the system’s performance. This simulation would \ninclude the equivalents to cochlea, hearing canal, eardrum, and other parts \nof the ear, each performing its required tasks in the system.",
-                        "distance": 0.7546792030334473,
+                        "distance": 0.8687227368354797,
                         "rerank_score": 8.135841369628906
                     },
                     {
@@ -287,7 +309,7 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "Introduction to AI • 5\nHence, proponents of weak AI measure the success of the systems that \nthey build based on their performance alone. They maintain that the raison \nd’etre of AI research is to solve difficult problems regardless of how they \nare actually solved.\nOn the other hand, proponents of strong AI are concerned with the \nstructure of the systems they build. They maintain that by sheer dint of \npossessing heuristics, algorithms, and knowledge of AI programs, computers",
-                        "distance": 0.4849235415458679,
+                        "distance": 0.6963645219802856,
                         "rerank_score": 8.117977142333984
                     },
                     {
@@ -296,7 +318,7 @@
                         "source": "sample.pdf",
                         "page_number": 41,
                         "document": "here:\nhttp://www.python.org/getit/\nIf you do not have Java installed, you can find online for instructions \ndoing so, as well as instructions for compiling and launching Java code.\nSummary\nIn this chapter, you learned about AI, strong versus weak AI, and the Turing \nTest for intelligence. Then you learned about heuristics and their useful­\nness in algorithms, followed by genetic algorithms, and knowledge repre­\nsentation. Next you saw how AI was initially applied to diverse areas such as",
-                        "distance": 1.1277891397476196,
+                        "distance": 1.0619741678237915,
                         "rerank_score": 5.645461082458496
                     },
                     {
@@ -305,16 +327,19 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 0.8082983493804932,
+                        "distance": 0.8990541696548462,
                         "rerank_score": 5.1535420417785645
                     }
                 ],
                 "precision_at_5": 1.0,
+                "recall_at_5": 1.0,
                 "ndcg_at_5": 1.0
             }
         },
         {
+            "question_id": "Q04",
             "question": "What is the Turing Test?",
+            "source": "sample.pdf",
             "baseline": {
                 "retrieved_chunks": [
                     {
@@ -323,7 +348,7 @@
                         "source": "sample.pdf",
                         "page_number": 25,
                         "document": "6 • Artificial Intelligence, Machine Learning, Deep Learning\nTuring might have based this test on a game that was popular during this \nperiod, which may even have been the impetus behind his machine intel­\nligence test.\nAdditional interesting updates regarding the Turing test are discussed \nin these two links:\nhttps://futurism.com/the-byte/scientists-invented-new-turing-test\nhttps://theconversation.com/our-turing-test-for-androids-will-judge-\nhow-lifelike-humanoid-robots-can-be-120696",
-                        "distance": 0.8304307460784912
+                        "distance": 0.9112797379493713
                     },
                     {
                         "rank": 2,
@@ -331,7 +356,7 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "than others. The question of machine intelligence is equally problematic.\nAlan Turing sought to answer the question of intelligence in opera­\ntional terms. He wanted to separate functionality (what something does) \nfrom implementation (how something is built). He devised something that’s \ncalled the Turing Test, which is discussed in the next section.\nDefinition of the Turing Test\nAlan Turing proposed two imitation games, in which one person or entity",
-                        "distance": 0.9035771489143372
+                        "distance": 0.9505667090415955
                     },
                     {
                         "rank": 3,
@@ -339,7 +364,7 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "but the woman is always truthful. In order that the interrogator cannot \ndetermine gender from voice, communication is via computer rather than \nthrough spoken words. If it is a man on the other side of the curtain, and he \nis successful in deceiving the interrogator, then he wins the imitation game. \nIn Turing’s original format for this test, both a man and a woman were \nseated behind a curtain and the interrogator had to identify both correctly.",
-                        "distance": 0.9731859564781189
+                        "distance": 0.9865018725395203
                     },
                     {
                         "rank": 4,
@@ -347,7 +372,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 1.0210460424423218
+                        "distance": 1.0104682445526123
                     },
                     {
                         "rank": 5,
@@ -355,11 +380,12 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "can possess a sense of consciousness and intelligence. As you know, \nHollywood has produced various movies (e.g., I, Robot and Blade Runner) \nthat belong to the strong AI camp.\nThe Turing Test\nThe previous section posed three questions, and the first two questions \nhave already been addressed: how do you determine intelligence, and are \nanimals intelligent? The answer to the second question is not necessarily yes \nor no. Some people are smarter than others and some animals are smarter",
-                        "distance": 1.0776524543762207
+                        "distance": 1.0381003618240356
                     }
                 ],
-                "precision_at_5": 1.0,
-                "ndcg_at_5": 0.8389776660073724
+                "precision_at_5": 0.8,
+                "recall_at_5": 1.0,
+                "ndcg_at_5": 0.7037693318309864
             },
             "reranked": {
                 "retrieved_chunks": [
@@ -369,7 +395,7 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "than others. The question of machine intelligence is equally problematic.\nAlan Turing sought to answer the question of intelligence in opera­\ntional terms. He wanted to separate functionality (what something does) \nfrom implementation (how something is built). He devised something that’s \ncalled the Turing Test, which is discussed in the next section.\nDefinition of the Turing Test\nAlan Turing proposed two imitation games, in which one person or entity",
-                        "distance": 0.9035771489143372,
+                        "distance": 0.9505667090415955,
                         "rerank_score": 5.616077423095703
                     },
                     {
@@ -378,7 +404,7 @@
                         "source": "sample.pdf",
                         "page_number": 25,
                         "document": "6 • Artificial Intelligence, Machine Learning, Deep Learning\nTuring might have based this test on a game that was popular during this \nperiod, which may even have been the impetus behind his machine intel­\nligence test.\nAdditional interesting updates regarding the Turing test are discussed \nin these two links:\nhttps://futurism.com/the-byte/scientists-invented-new-turing-test\nhttps://theconversation.com/our-turing-test-for-androids-will-judge-\nhow-lifelike-humanoid-robots-can-be-120696",
-                        "distance": 0.8304307460784912,
+                        "distance": 0.9112797379493713,
                         "rerank_score": 4.674462795257568
                     },
                     {
@@ -387,7 +413,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 1.0210460424423218,
+                        "distance": 1.0104682445526123,
                         "rerank_score": 3.6161744594573975
                     },
                     {
@@ -396,7 +422,7 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "can possess a sense of consciousness and intelligence. As you know, \nHollywood has produced various movies (e.g., I, Robot and Blade Runner) \nthat belong to the strong AI camp.\nThe Turing Test\nThe previous section posed three questions, and the first two questions \nhave already been addressed: how do you determine intelligence, and are \nanimals intelligent? The answer to the second question is not necessarily yes \nor no. Some people are smarter than others and some animals are smarter",
-                        "distance": 1.0776524543762207,
+                        "distance": 1.0381003618240356,
                         "rerank_score": 2.8176417350769043
                     },
                     {
@@ -405,16 +431,19 @@
                         "source": "sample.pdf",
                         "page_number": 24,
                         "document": "but the woman is always truthful. In order that the interrogator cannot \ndetermine gender from voice, communication is via computer rather than \nthrough spoken words. If it is a man on the other side of the curtain, and he \nis successful in deceiving the interrogator, then he wins the imitation game. \nIn Turing’s original format for this test, both a man and a woman were \nseated behind a curtain and the interrogator had to identify both correctly.",
-                        "distance": 0.9731859564781189,
+                        "distance": 0.9865018725395203,
                         "rerank_score": 0.8067916035652161
                     }
                 ],
-                "precision_at_5": 1.0,
-                "ndcg_at_5": 0.9213963208540731
+                "precision_at_5": 0.8,
+                "recall_at_5": 1.0,
+                "ndcg_at_5": 0.946493202248989
             }
         },
         {
+            "question_id": "Q05",
             "question": "What are the major parts of AI?",
+            "source": "sample.pdf",
             "baseline": {
                 "retrieved_chunks": [
                     {
@@ -423,7 +452,7 @@
                         "source": "sample.pdf",
                         "page_number": 37,
                         "document": "major parts of AI, which include machine learning and deep learning.\nMajor Parts of AI \nThe subsequent chapters in this book delve into various important parts of \nAI, which include:\n• ML (Machine Learning)\n• DL (Deep Learning)\n• NLP (Natural Language Processing)\n• RL (Reinforcement Learning)\n• DRL (Deep Reinforcement Learning)\nTraditional AI (twentieth century) is based on collections of rules, which \nled to expert systems in the 1980s. Traditional AI also involved LISP, which",
-                        "distance": 0.5376036167144775
+                        "distance": 0.7332145571708679
                     },
                     {
                         "rank": 2,
@@ -431,7 +460,7 @@
                         "source": "sample.pdf",
                         "page_number": 41,
                         "document": "games and expert systems.\nYou also learned about the early approaches to neural computing, evo­\nlutionary computation, NLP, and bioinformatics. In addition, you got an \nintroduction to the major subfields of AI, which include natural language \nprocessing, machine learning, deep learning, reinforcement learning, and \ndeep reinforcement learning.",
-                        "distance": 0.6928676962852478
+                        "distance": 0.8323867321014404
                     },
                     {
                         "rank": 3,
@@ -439,7 +468,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 0.7396266460418701
+                        "distance": 0.8600154519081116
                     },
                     {
                         "rank": 4,
@@ -447,7 +476,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "quent chapters.\nKeep in mind that many AI-focused books tend to discuss AI from the \nperspective of computer science and a discussion of traditional algorithms \nand data structures. By contrast, this book treats AI as an “umbrella” for \nmachine learning and deep learning, and therefore it’s discussed in a cur­\nsory manner as a precursor to the other chapters.\nThe first part of this chapter starts with a discussion regarding the term",
-                        "distance": 0.8102970719337463
+                        "distance": 0.9001650214195251
                     },
                     {
                         "rank": 5,
@@ -455,10 +484,11 @@
                         "source": "sample.pdf",
                         "page_number": 31,
                         "document": "12 • Artificial Intelligence, Machine Learning, Deep Learning\nExpert Systems\nExpert systems are one of the areas that have been investigated for almost \nas long as AI itself has existed. It is one discipline that AI can claim as a \ngreat success. Expert systems have many characteristics that make them \ndesirable for AI research and development. These include separation of \nthe knowledge base from the inference engine, being more than the sum of",
-                        "distance": 0.8363538384437561
+                        "distance": 0.9145237803459167
                     }
                 ],
                 "precision_at_5": 0.6,
+                "recall_at_5": 0.6,
                 "ndcg_at_5": 0.7479266229999318
             },
             "reranked": {
@@ -469,7 +499,7 @@
                         "source": "sample.pdf",
                         "page_number": 37,
                         "document": "major parts of AI, which include machine learning and deep learning.\nMajor Parts of AI \nThe subsequent chapters in this book delve into various important parts of \nAI, which include:\n• ML (Machine Learning)\n• DL (Deep Learning)\n• NLP (Natural Language Processing)\n• RL (Reinforcement Learning)\n• DRL (Deep Reinforcement Learning)\nTraditional AI (twentieth century) is based on collections of rules, which \nled to expert systems in the 1980s. Traditional AI also involved LISP, which",
-                        "distance": 0.5376036167144775,
+                        "distance": 0.7332145571708679,
                         "rerank_score": 9.782491683959961
                     },
                     {
@@ -478,7 +508,7 @@
                         "source": "sample.pdf",
                         "page_number": 8,
                         "document": "14\n\t\nBioinformatics\b\n17\n\t\nMajor Parts of AI \b\n18\nMachine Learning\b\n18\nDeep Learning \b\n19\nReinforcement Learning \b\n19\nRobotics\b\n20\n\t\nCode Samples\b\n21\n\t\nSummary\b\n22\nCONTENTS",
-                        "distance": 0.9384684562683105,
+                        "distance": 0.9687458276748657,
                         "rerank_score": 7.474850654602051
                     },
                     {
@@ -487,7 +517,7 @@
                         "source": "sample.pdf",
                         "page_number": 41,
                         "document": "games and expert systems.\nYou also learned about the early approaches to neural computing, evo­\nlutionary computation, NLP, and bioinformatics. In addition, you got an \nintroduction to the major subfields of AI, which include natural language \nprocessing, machine learning, deep learning, reinforcement learning, and \ndeep reinforcement learning.",
-                        "distance": 0.6928676962852478,
+                        "distance": 0.8323867321014404,
                         "rerank_score": 5.187234401702881
                     },
                     {
@@ -496,7 +526,7 @@
                         "source": "sample.pdf",
                         "page_number": 20,
                         "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
-                        "distance": 0.7396266460418701,
+                        "distance": 0.8600154519081116,
                         "rerank_score": 4.251138687133789
                     },
                     {
@@ -505,12 +535,13 @@
                         "source": "sample.pdf",
                         "page_number": 37,
                         "document": "Traditional AI has some significant limitations, mainly because of the num­\nber of rules that are required. \nMachine Learning\nAround the middle of the twentieth century machine learning (a subset \nof AI) relied primarily on data to optimize and “learn” how to perform \ntasks, often accompanied by new or improved algorithms, such as linear \nregression, k-NN, decision trees, random forests, and SVMs; with the \nexception of linear regression, all the other algorithms are classifiers.",
-                        "distance": 0.9511297941207886,
+                        "distance": 0.9752588868141174,
                         "rerank_score": -0.29307350516319275
                     }
                 ],
                 "precision_at_5": 1.0,
-                "ndcg_at_5": 1.0
+                "recall_at_5": 1.0,
+                "ndcg_at_5": 0.9322978750325865
             }
         }
     ]

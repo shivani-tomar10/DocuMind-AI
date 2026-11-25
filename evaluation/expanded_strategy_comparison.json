@@ -1,0 +1,2481 @@
+{
+    "configuration": {
+        "candidate_k": 40,
+        "top_k": 5,
+        "rrf_k": 60,
+        "search_mode": "exact",
+        "reranking": "Cross-Encoder"
+    },
+    "summary": {
+        "Original RAG": {
+            "average_precision_at_5": 0.5444444444444445,
+            "average_recall_at_5": 0.6499999999999999,
+            "average_ndcg_at_5": 0.596384989488764,
+            "average_unanswerable_non_relevant_rate": 1.0
+        },
+        "Multi-Query RAG": {
+            "average_precision_at_5": 0.5444444444444445,
+            "average_recall_at_5": 0.6499999999999999,
+            "average_ndcg_at_5": 0.596384989488764,
+            "average_unanswerable_non_relevant_rate": 1.0
+        }
+    },
+    "questions": [
+        {
+            "id": "Q01",
+            "question": "What is Artificial Intelligence?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is Artificial Intelligence?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.8,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9550337350142764,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p23_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "therefore must be more intelligent than humans. The truth is most likely \nsomewhere between these two extremes. As we have discussed, different \nanimal species possess intelligence to varying degrees. However, we are \nmore interested in a test to ascertain the existence of machine intelligence \nthan in developing standardized IQ tests for animals. Perhaps Raphael put \nit best: artificial intelligence is the science of making machines do things \nthat would require intelligence if done by man.",
+                            "distance": 1.0068174600601196,
+                            "rerank_score": 6.485642910003662
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p21_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 21,
+                            "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
+                            "distance": 0.7674474120140076,
+                            "rerank_score": 6.340223789215088
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p23_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
+                            "distance": 0.89695143699646,
+                            "rerank_score": 5.904476642608643
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 0.8284856677055359,
+                            "rerank_score": 5.583782196044922
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p8_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 8,
+                            "document": "Preface\b\nxv\nChapter 1:  Introduction to AI\b\n1\n\t\nWhat is Artificial Intelligence? \b\n2\nStrong AI versus Weak AI \b\n4\n\t\nThe Turing Test\b\n5\nDefinition of the Turing Test\b\n5\nAn Interrogator Test\b\n6\n\t\nHeuristics\b\n6\nGenetic Algorithms\b\n8\n\t\nKnowledge Representation\b\n8\nLogic-based Solutions\b\n9\nSemantic Networks\b\n9\n\t\nAI and Games\b\n10\nThe Success of AlphaZero\b\n11\n\t\nExpert Systems \b\n12\n\t\nNeural Computing\b\n13\n\t\nEvolutionary Computation\b\n14\n\t\nNatural Language Processing\b\n14\n\t\nBioinformatics\b\n17",
+                            "distance": 0.8224300742149353,
+                            "rerank_score": 4.814140319824219
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.8,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9550337350142764,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p23_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "therefore must be more intelligent than humans. The truth is most likely \nsomewhere between these two extremes. As we have discussed, different \nanimal species possess intelligence to varying degrees. However, we are \nmore interested in a test to ascertain the existence of machine intelligence \nthan in developing standardized IQ tests for animals. Perhaps Raphael put \nit best: artificial intelligence is the science of making machines do things \nthat would require intelligence if done by man.",
+                            "distance": 1.0068174600601196,
+                            "rerank_score": 6.485642910003662
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p21_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 21,
+                            "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
+                            "distance": 0.7674474120140076,
+                            "rerank_score": 6.340223789215088
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p23_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
+                            "distance": 0.89695143699646,
+                            "rerank_score": 5.904476642608643
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 0.8284856677055359,
+                            "rerank_score": 5.583782196044922
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p8_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 8,
+                            "document": "Preface\b\nxv\nChapter 1:  Introduction to AI\b\n1\n\t\nWhat is Artificial Intelligence? \b\n2\nStrong AI versus Weak AI \b\n4\n\t\nThe Turing Test\b\n5\nDefinition of the Turing Test\b\n5\nAn Interrogator Test\b\n6\n\t\nHeuristics\b\n6\nGenetic Algorithms\b\n8\n\t\nKnowledge Representation\b\n8\nLogic-based Solutions\b\n9\nSemantic Networks\b\n9\n\t\nAI and Games\b\n10\nThe Success of AlphaZero\b\n11\n\t\nExpert Systems \b\n12\n\t\nNeural Computing\b\n13\n\t\nEvolutionary Computation\b\n14\n\t\nNatural Language Processing\b\n14\n\t\nBioinformatics\b\n17",
+                            "distance": 0.8224300742149353,
+                            "rerank_score": 4.814140319824219
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q02",
+            "question": "What are the goals of Artificial Intelligence?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What are the goals of Artificial Intelligence?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.6,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9726097514324383,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p23_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
+                            "distance": 0.9540951251983643,
+                            "rerank_score": 8.664230346679688
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 0.9617021083831787,
+                            "rerank_score": 1.5186069011688232
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p33_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 33,
+                            "document": "ation of a human-level Artificial Intelligence, which he aptly cites as the \nholy grail of AI research, renounces reliance on the symbol-based approach. \nThis latter approach relies upon the use of heuristics and representational \nparadigms. \nIn his view, intelligent systems can be designed in multiple layers in \nwhich higher leveled layers rely upon those layers beneath them. For \nexample, if you wanted to build a robot capable of avoiding obstacles, the",
+                            "distance": 0.9524048566818237,
+                            "rerank_score": 1.2647056579589844
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p2_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 2,
+                            "document": "Artificial Intelligence\nMachine Learning\nand\nDeep Learning",
+                            "distance": 1.0532681941986084,
+                            "rerank_score": 1.0598030090332031
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p21_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 21,
+                            "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
+                            "distance": 1.0101481676101685,
+                            "rerank_score": 0.42045843601226807
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.6,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9726097514324383,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p23_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
+                            "distance": 0.9540951251983643,
+                            "rerank_score": 8.664230346679688
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 0.9617021083831787,
+                            "rerank_score": 1.5186069011688232
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p33_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 33,
+                            "document": "ation of a human-level Artificial Intelligence, which he aptly cites as the \nholy grail of AI research, renounces reliance on the symbol-based approach. \nThis latter approach relies upon the use of heuristics and representational \nparadigms. \nIn his view, intelligent systems can be designed in multiple layers in \nwhich higher leveled layers rely upon those layers beneath them. For \nexample, if you wanted to build a robot capable of avoiding obstacles, the",
+                            "distance": 0.9524048566818237,
+                            "rerank_score": 1.2647056579589844
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p2_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 2,
+                            "document": "Artificial Intelligence\nMachine Learning\nand\nDeep Learning",
+                            "distance": 1.0532681941986084,
+                            "rerank_score": 1.0598030090332031
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p21_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 21,
+                            "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
+                            "distance": 1.0101481676101685,
+                            "rerank_score": 0.42045843601226807
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q03",
+            "question": "Explain Strong AI versus Weak AI.",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "Explain Strong AI versus Weak AI."
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 1.0,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p23_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "that would require intelligence if done by man.\nStrong AI versus Weak AI \nCurrently there are two main camp regarding AI. The weak AI approach \nis associated with the Massachusetts Institute of Technology, and it views \nany system that exhibits intelligent behavior as an example of AI. This camp \nfocuses on whether a program performs correctly, regardless of whether \nthe artifact performs its task in the same way humans do. The results of AI",
+                            "distance": 0.8167407512664795,
+                            "rerank_score": 8.957172393798828
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p23_chunk6",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "capable of hearing: proponents of strong AI might aim to achieve success by \nsimulating the human hearing system, whereas weak AI proponents would \nbe concerned merely with the system’s performance. This simulation would \ninclude the equivalents to cochlea, hearing canal, eardrum, and other parts \nof the ear, each performing its required tasks in the system.",
+                            "distance": 0.8687227368354797,
+                            "rerank_score": 8.135841369628906
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p24_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 24,
+                            "document": "Introduction to AI • 5\nHence, proponents of weak AI measure the success of the systems that \nthey build based on their performance alone. They maintain that the raison \nd’etre of AI research is to solve difficult problems regardless of how they \nare actually solved.\nOn the other hand, proponents of strong AI are concerned with the \nstructure of the systems they build. They maintain that by sheer dint of \npossessing heuristics, algorithms, and knowledge of AI programs, computers",
+                            "distance": 0.6963645219802856,
+                            "rerank_score": 8.117977142333984
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p41_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 41,
+                            "document": "here:\nhttp://www.python.org/getit/\nIf you do not have Java installed, you can find online for instructions \ndoing so, as well as instructions for compiling and launching Java code.\nSummary\nIn this chapter, you learned about AI, strong versus weak AI, and the Turing \nTest for intelligence. Then you learned about heuristics and their useful­\nness in algorithms, followed by genetic algorithms, and knowledge repre­\nsentation. Next you saw how AI was initially applied to diverse areas such as",
+                            "distance": 1.0619741678237915,
+                            "rerank_score": 5.645461082458496
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 0.8990541696548462,
+                            "rerank_score": 5.1535420417785645
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 1.0,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p23_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "that would require intelligence if done by man.\nStrong AI versus Weak AI \nCurrently there are two main camp regarding AI. The weak AI approach \nis associated with the Massachusetts Institute of Technology, and it views \nany system that exhibits intelligent behavior as an example of AI. This camp \nfocuses on whether a program performs correctly, regardless of whether \nthe artifact performs its task in the same way humans do. The results of AI",
+                            "distance": 0.8167407512664795,
+                            "rerank_score": 8.957172393798828
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p23_chunk6",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "capable of hearing: proponents of strong AI might aim to achieve success by \nsimulating the human hearing system, whereas weak AI proponents would \nbe concerned merely with the system’s performance. This simulation would \ninclude the equivalents to cochlea, hearing canal, eardrum, and other parts \nof the ear, each performing its required tasks in the system.",
+                            "distance": 0.8687227368354797,
+                            "rerank_score": 8.135841369628906
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p24_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 24,
+                            "document": "Introduction to AI • 5\nHence, proponents of weak AI measure the success of the systems that \nthey build based on their performance alone. They maintain that the raison \nd’etre of AI research is to solve difficult problems regardless of how they \nare actually solved.\nOn the other hand, proponents of strong AI are concerned with the \nstructure of the systems they build. They maintain that by sheer dint of \npossessing heuristics, algorithms, and knowledge of AI programs, computers",
+                            "distance": 0.6963645219802856,
+                            "rerank_score": 8.117977142333984
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p41_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 41,
+                            "document": "here:\nhttp://www.python.org/getit/\nIf you do not have Java installed, you can find online for instructions \ndoing so, as well as instructions for compiling and launching Java code.\nSummary\nIn this chapter, you learned about AI, strong versus weak AI, and the Turing \nTest for intelligence. Then you learned about heuristics and their useful­\nness in algorithms, followed by genetic algorithms, and knowledge repre­\nsentation. Next you saw how AI was initially applied to diverse areas such as",
+                            "distance": 1.0619741678237915,
+                            "rerank_score": 5.645461082458496
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 0.8990541696548462,
+                            "rerank_score": 5.1535420417785645
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q04",
+            "question": "What is the Turing Test?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is the Turing Test?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.8,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.946493202248989,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p24_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 24,
+                            "document": "than others. The question of machine intelligence is equally problematic.\nAlan Turing sought to answer the question of intelligence in opera­\ntional terms. He wanted to separate functionality (what something does) \nfrom implementation (how something is built). He devised something that’s \ncalled the Turing Test, which is discussed in the next section.\nDefinition of the Turing Test\nAlan Turing proposed two imitation games, in which one person or entity",
+                            "distance": 0.9505667090415955,
+                            "rerank_score": 5.616077423095703
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p25_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 25,
+                            "document": "6 • Artificial Intelligence, Machine Learning, Deep Learning\nTuring might have based this test on a game that was popular during this \nperiod, which may even have been the impetus behind his machine intel­\nligence test.\nAdditional interesting updates regarding the Turing test are discussed \nin these two links:\nhttps://futurism.com/the-byte/scientists-invented-new-turing-test\nhttps://theconversation.com/our-turing-test-for-androids-will-judge-\nhow-lifelike-humanoid-robots-can-be-120696",
+                            "distance": 0.9112797379493713,
+                            "rerank_score": 4.674462795257568
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 1.0104682445526123,
+                            "rerank_score": 3.6161744594573975
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p24_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 24,
+                            "document": "can possess a sense of consciousness and intelligence. As you know, \nHollywood has produced various movies (e.g., I, Robot and Blade Runner) \nthat belong to the strong AI camp.\nThe Turing Test\nThe previous section posed three questions, and the first two questions \nhave already been addressed: how do you determine intelligence, and are \nanimals intelligent? The answer to the second question is not necessarily yes \nor no. Some people are smarter than others and some animals are smarter",
+                            "distance": 1.0381003618240356,
+                            "rerank_score": 2.8176417350769043
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p24_chunk5",
+                            "source": "sample.pdf",
+                            "page_number": 24,
+                            "document": "but the woman is always truthful. In order that the interrogator cannot \ndetermine gender from voice, communication is via computer rather than \nthrough spoken words. If it is a man on the other side of the curtain, and he \nis successful in deceiving the interrogator, then he wins the imitation game. \nIn Turing’s original format for this test, both a man and a woman were \nseated behind a curtain and the interrogator had to identify both correctly.",
+                            "distance": 0.9865018725395203,
+                            "rerank_score": 0.8067916035652161
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.8,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.946493202248989,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p24_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 24,
+                            "document": "than others. The question of machine intelligence is equally problematic.\nAlan Turing sought to answer the question of intelligence in opera­\ntional terms. He wanted to separate functionality (what something does) \nfrom implementation (how something is built). He devised something that’s \ncalled the Turing Test, which is discussed in the next section.\nDefinition of the Turing Test\nAlan Turing proposed two imitation games, in which one person or entity",
+                            "distance": 0.9505667090415955,
+                            "rerank_score": 5.616077423095703
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p25_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 25,
+                            "document": "6 • Artificial Intelligence, Machine Learning, Deep Learning\nTuring might have based this test on a game that was popular during this \nperiod, which may even have been the impetus behind his machine intel­\nligence test.\nAdditional interesting updates regarding the Turing test are discussed \nin these two links:\nhttps://futurism.com/the-byte/scientists-invented-new-turing-test\nhttps://theconversation.com/our-turing-test-for-androids-will-judge-\nhow-lifelike-humanoid-robots-can-be-120696",
+                            "distance": 0.9112797379493713,
+                            "rerank_score": 4.674462795257568
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 1.0104682445526123,
+                            "rerank_score": 3.6161744594573975
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p24_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 24,
+                            "document": "can possess a sense of consciousness and intelligence. As you know, \nHollywood has produced various movies (e.g., I, Robot and Blade Runner) \nthat belong to the strong AI camp.\nThe Turing Test\nThe previous section posed three questions, and the first two questions \nhave already been addressed: how do you determine intelligence, and are \nanimals intelligent? The answer to the second question is not necessarily yes \nor no. Some people are smarter than others and some animals are smarter",
+                            "distance": 1.0381003618240356,
+                            "rerank_score": 2.8176417350769043
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p24_chunk5",
+                            "source": "sample.pdf",
+                            "page_number": 24,
+                            "document": "but the woman is always truthful. In order that the interrogator cannot \ndetermine gender from voice, communication is via computer rather than \nthrough spoken words. If it is a man on the other side of the curtain, and he \nis successful in deceiving the interrogator, then he wins the imitation game. \nIn Turing’s original format for this test, both a man and a woman were \nseated behind a curtain and the interrogator had to identify both correctly.",
+                            "distance": 0.9865018725395203,
+                            "rerank_score": 0.8067916035652161
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q05",
+            "question": "What are the major parts of AI?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What are the major parts of AI?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9322978750325865,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p37_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 37,
+                            "document": "major parts of AI, which include machine learning and deep learning.\nMajor Parts of AI \nThe subsequent chapters in this book delve into various important parts of \nAI, which include:\n• ML (Machine Learning)\n• DL (Deep Learning)\n• NLP (Natural Language Processing)\n• RL (Reinforcement Learning)\n• DRL (Deep Reinforcement Learning)\nTraditional AI (twentieth century) is based on collections of rules, which \nled to expert systems in the 1980s. Traditional AI also involved LISP, which",
+                            "distance": 0.7332145571708679,
+                            "rerank_score": 9.782491683959961
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p8_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 8,
+                            "document": "14\n\t\nBioinformatics\b\n17\n\t\nMajor Parts of AI \b\n18\nMachine Learning\b\n18\nDeep Learning \b\n19\nReinforcement Learning \b\n19\nRobotics\b\n20\n\t\nCode Samples\b\n21\n\t\nSummary\b\n22\nCONTENTS",
+                            "distance": 0.9687458276748657,
+                            "rerank_score": 7.474850654602051
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p41_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 41,
+                            "document": "games and expert systems.\nYou also learned about the early approaches to neural computing, evo­\nlutionary computation, NLP, and bioinformatics. In addition, you got an \nintroduction to the major subfields of AI, which include natural language \nprocessing, machine learning, deep learning, reinforcement learning, and \ndeep reinforcement learning.",
+                            "distance": 0.8323867321014404,
+                            "rerank_score": 5.187234401702881
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 0.8600154519081116,
+                            "rerank_score": 4.251138687133789
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p37_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 37,
+                            "document": "Traditional AI has some significant limitations, mainly because of the num­\nber of rules that are required. \nMachine Learning\nAround the middle of the twentieth century machine learning (a subset \nof AI) relied primarily on data to optimize and “learn” how to perform \ntasks, often accompanied by new or improved algorithms, such as linear \nregression, k-NN, decision trees, random forests, and SVMs; with the \nexception of linear regression, all the other algorithms are classifiers.",
+                            "distance": 0.9752588868141174,
+                            "rerank_score": -0.29307350516319275
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9322978750325865,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p37_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 37,
+                            "document": "major parts of AI, which include machine learning and deep learning.\nMajor Parts of AI \nThe subsequent chapters in this book delve into various important parts of \nAI, which include:\n• ML (Machine Learning)\n• DL (Deep Learning)\n• NLP (Natural Language Processing)\n• RL (Reinforcement Learning)\n• DRL (Deep Reinforcement Learning)\nTraditional AI (twentieth century) is based on collections of rules, which \nled to expert systems in the 1980s. Traditional AI also involved LISP, which",
+                            "distance": 0.7332145571708679,
+                            "rerank_score": 9.782491683959961
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p8_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 8,
+                            "document": "14\n\t\nBioinformatics\b\n17\n\t\nMajor Parts of AI \b\n18\nMachine Learning\b\n18\nDeep Learning \b\n19\nReinforcement Learning \b\n19\nRobotics\b\n20\n\t\nCode Samples\b\n21\n\t\nSummary\b\n22\nCONTENTS",
+                            "distance": 0.9687458276748657,
+                            "rerank_score": 7.474850654602051
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p41_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 41,
+                            "document": "games and expert systems.\nYou also learned about the early approaches to neural computing, evo­\nlutionary computation, NLP, and bioinformatics. In addition, you got an \nintroduction to the major subfields of AI, which include natural language \nprocessing, machine learning, deep learning, reinforcement learning, and \ndeep reinforcement learning.",
+                            "distance": 0.8323867321014404,
+                            "rerank_score": 5.187234401702881
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p20_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "artificial intelligence, various potential ways to determine the presence of \nintelligence, as well as the difference between Strong AI and Weak AI. \nYou will also learn about the Turing Test, which is a well-known test for \nintelligence.\nThe second part of this chapter discusses some AI uses-cases and the \nearly approaches to neural computing, evolutionary computation, NLP, and \nbioinformatics.\nThe third part of this chapter introduces you to major subfields of AI,",
+                            "distance": 0.8600154519081116,
+                            "rerank_score": 4.251138687133789
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p37_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 37,
+                            "document": "Traditional AI has some significant limitations, mainly because of the num­\nber of rules that are required. \nMachine Learning\nAround the middle of the twentieth century machine learning (a subset \nof AI) relied primarily on data to optimize and “learn” how to perform \ntasks, often accompanied by new or improved algorithms, such as linear \nregression, k-NN, decision trees, random forests, and SVMs; with the \nexception of linear regression, all the other algorithms are classifiers.",
+                            "distance": 0.9752588868141174,
+                            "rerank_score": -0.29307350516319275
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q06",
+            "question": "What is the relationship between Machine Learning and Artificial Intelligence?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is the relationship between Machine Learning and Artificial Intelligence?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.38685280723454163,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p2_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 2,
+                            "document": "Artificial Intelligence\nMachine Learning\nand\nDeep Learning",
+                            "distance": 0.9283012747764587,
+                            "rerank_score": 4.21390438079834
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p23_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
+                            "distance": 0.8797990679740906,
+                            "rerank_score": 3.901155471801758
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p23_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "therefore must be more intelligent than humans. The truth is most likely \nsomewhere between these two extremes. As we have discussed, different \nanimal species possess intelligence to varying degrees. However, we are \nmore interested in a test to ascertain the existence of machine intelligence \nthan in developing standardized IQ tests for animals. Perhaps Raphael put \nit best: artificial intelligence is the science of making machines do things \nthat would require intelligence if done by man.",
+                            "distance": 1.0514777898788452,
+                            "rerank_score": 1.9435291290283203
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p21_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 21,
+                            "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
+                            "distance": 0.9205931425094604,
+                            "rerank_score": 1.889721155166626
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p81_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 81,
+                            "document": "62 • Artificial Intelligence, Machine Learning, Deep Learning\nSummary\nThis chapter introduced you to machine learning and concepts such as fea­\nture selection, feature engineering, data cleaning, training sets, and test \nsets. Next you learned about supervised, unsupervised, and semi-super­\nvised learning. Then you learned regression tasks, classification tasks, and \nclustering, as well as the steps that are typically required in order to prepare",
+                            "distance": 1.0124999284744263,
+                            "rerank_score": 1.7924590110778809
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.38685280723454163,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p2_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 2,
+                            "document": "Artificial Intelligence\nMachine Learning\nand\nDeep Learning",
+                            "distance": 0.9283012747764587,
+                            "rerank_score": 4.21390438079834
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p23_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "4 • Artificial Intelligence, Machine Learning, Deep Learning\nNow consider the following question: can inanimate objects, such as \ncomputers, possess intelligence? The declared goal of artificial Intelligence \nis to create computer software and/or hardware systems that exhibit think­\ning comparable to that of humans, in other words, to display characteristics \nusually associated with human intelligence. \nWhat about the capacity to think, and can machines think? Keep in mind",
+                            "distance": 0.8797990679740906,
+                            "rerank_score": 3.901155471801758
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p23_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 23,
+                            "document": "therefore must be more intelligent than humans. The truth is most likely \nsomewhere between these two extremes. As we have discussed, different \nanimal species possess intelligence to varying degrees. However, we are \nmore interested in a test to ascertain the existence of machine intelligence \nthan in developing standardized IQ tests for animals. Perhaps Raphael put \nit best: artificial intelligence is the science of making machines do things \nthat would require intelligence if done by man.",
+                            "distance": 1.0514777898788452,
+                            "rerank_score": 1.9435291290283203
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p21_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 21,
+                            "document": "2 • Artificial Intelligence, Machine Learning, Deep Learning\nAlthough code-specific samples are not discussed in this chapter, the \ncompanion files for this chapter do contain a Java-based code sample for \nsolving the Red Donkey problem, and also a Python-based code sample \n(that requires Python 2.x) for solving Rubik’s Cube.\nWhat Is Artificial Intelligence?\nThe literal meaning of the word artificial is synthetic, which often has a neg­",
+                            "distance": 0.9205931425094604,
+                            "rerank_score": 1.889721155166626
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p81_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 81,
+                            "document": "62 • Artificial Intelligence, Machine Learning, Deep Learning\nSummary\nThis chapter introduced you to machine learning and concepts such as fea­\nture selection, feature engineering, data cleaning, training sets, and test \nsets. Next you learned about supervised, unsupervised, and semi-super­\nvised learning. Then you learned regression tasks, classification tasks, and \nclustering, as well as the steps that are typically required in order to prepare",
+                            "distance": 1.0124999284744263,
+                            "rerank_score": 1.7924590110778809
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q07",
+            "question": "What is Deep Learning?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is Deep Learning?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9130689212173096,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p117_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 117,
+                            "document": "tiple hidden layers makes more sense, as discussed in the next section.\nWhat Is Deep Learning?\nDeep learning is a subset of machine learning that focuses on neural \nnetworks and algorithms for training neural networks. As you learned in \nthe introduction to this chapter, deep learning comprises many types of",
+                            "distance": 0.7991431951522827,
+                            "rerank_score": 10.723692893981934
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p203_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 203,
+                            "document": "active development, which means that interfaces may change at any time.\nWhat Is Deep Reinforcement Learning (DRL)?\nDeep Reinforcement Learning is a surprisingly effective combination of \ndeep learning and RL that has shown remarkable results in a variety of \ntasks. For example, DRL has won game competitions such as Go (Alpha Go",
+                            "distance": 0.9412779211997986,
+                            "rerank_score": 7.190053939819336
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p122_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 122,
+                            "document": "Deep Learning Introduction • 103\ntives that attempt to provide explainability for the outcomes of neural \nnetworks, but such work is still in its infancy. Deep learning finds pat­\nterns and can determine correlation, but it’s incapable of determining \ncausality. \nNow that you have a bird’s eye view of deep learning, let’s rewind and \ndiscuss an important cornerstone of machine learning called the Percep­\ntron, which is the topic of the next section.\nWhat Are Perceptrons?",
+                            "distance": 0.8732423186302185,
+                            "rerank_score": 6.1882405281066895
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p118_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 118,
+                            "document": "Deep Learning Introduction • 99\nneural networks, such as CNNs, RNNs, LSTMs, GRUs, Variational Autoencod­\ners (VAEs), and GANs. A deep learning model requires at least two hidden \nlayers in a neural network (very deep learning involves neural networks \nwith at least ten hidden layers).\nFrom a high-level perspective, deep learning with supervised learning \ninvolves defining a model (a.k.a. neural network) as well as:\n• Making an estimate for a datapoint",
+                            "distance": 0.8074270486831665,
+                            "rerank_score": 5.629021644592285
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p38_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 38,
+                            "document": "has its roots in the middle of the twentieth century. Deep-learning archi­\ntectures rely on the perceptron as the basis of neural networks, often involv­\ning large or massive datasets. Such architectures also involve heuristics and \nempirical results. Nowadays deep learning can surpass humans for some \nimage classification.\nWhile machine learning involves MLPs (multilayer perceptrons), deep \nlearning introduces deep neural networks, with new algorithms and new",
+                            "distance": 0.7995932698249817,
+                            "rerank_score": 5.433393478393555
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9130689212173096,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p117_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 117,
+                            "document": "tiple hidden layers makes more sense, as discussed in the next section.\nWhat Is Deep Learning?\nDeep learning is a subset of machine learning that focuses on neural \nnetworks and algorithms for training neural networks. As you learned in \nthe introduction to this chapter, deep learning comprises many types of",
+                            "distance": 0.7991431951522827,
+                            "rerank_score": 10.723692893981934
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p203_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 203,
+                            "document": "active development, which means that interfaces may change at any time.\nWhat Is Deep Reinforcement Learning (DRL)?\nDeep Reinforcement Learning is a surprisingly effective combination of \ndeep learning and RL that has shown remarkable results in a variety of \ntasks. For example, DRL has won game competitions such as Go (Alpha Go",
+                            "distance": 0.9412779211997986,
+                            "rerank_score": 7.190053939819336
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p122_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 122,
+                            "document": "Deep Learning Introduction • 103\ntives that attempt to provide explainability for the outcomes of neural \nnetworks, but such work is still in its infancy. Deep learning finds pat­\nterns and can determine correlation, but it’s incapable of determining \ncausality. \nNow that you have a bird’s eye view of deep learning, let’s rewind and \ndiscuss an important cornerstone of machine learning called the Percep­\ntron, which is the topic of the next section.\nWhat Are Perceptrons?",
+                            "distance": 0.8732423186302185,
+                            "rerank_score": 6.1882405281066895
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p118_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 118,
+                            "document": "Deep Learning Introduction • 99\nneural networks, such as CNNs, RNNs, LSTMs, GRUs, Variational Autoencod­\ners (VAEs), and GANs. A deep learning model requires at least two hidden \nlayers in a neural network (very deep learning involves neural networks \nwith at least ten hidden layers).\nFrom a high-level perspective, deep learning with supervised learning \ninvolves defining a model (a.k.a. neural network) as well as:\n• Making an estimate for a datapoint",
+                            "distance": 0.8074270486831665,
+                            "rerank_score": 5.629021644592285
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p38_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 38,
+                            "document": "has its roots in the middle of the twentieth century. Deep-learning archi­\ntectures rely on the perceptron as the basis of neural networks, often involv­\ning large or massive datasets. Such architectures also involve heuristics and \nempirical results. Nowadays deep learning can surpass humans for some \nimage classification.\nWhile machine learning involves MLPs (multilayer perceptrons), deep \nlearning introduces deep neural networks, with new algorithms and new",
+                            "distance": 0.7995932698249817,
+                            "rerank_score": 5.433393478393555
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q08",
+            "question": "What is Natural Language Processing?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is Natural Language Processing?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.8389776660073724,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p33_chunk5",
+                            "source": "sample.pdf",
+                            "page_number": 33,
+                            "document": "Natural Language Processing\nIf we wish to build intelligent systems, it seems natural to ask that our sys­\ntems possess a language-understanding facility. This is an axiom that was \nwell understood by many early practitioners. Eliza is one well-known early \napplication program, which was developed by Joseph Weizenbaum‚ an MIT",
+                            "distance": 0.9224486351013184,
+                            "rerank_score": 6.928231716156006
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p20_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "which include natural language processing (with NLU and NLG), machine \nlearning, deep learning, reinforcement learning, and deep reinforcement \nlearning.",
+                            "distance": 0.9216381907463074,
+                            "rerank_score": 4.506888389587402
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p179_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 179,
+                            "document": "160 • Artificial Intelligence, Machine Learning, Deep Learning\nWorking with NLP (Natural Language Processing)\nThis section highlights some concepts in NLP, and depending on your back­\nground, you might need to perform an online search to learn more about \nsome of the concepts (try Wikipedia). Although the concepts are treated in \na very superficial manner, you will know what to pursue in order to further \nyour study of NLP.\nNLP is currently the focus of significant interest in the machine learn­",
+                            "distance": 0.920418918132782,
+                            "rerank_score": 3.6960678100585938
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p17_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 17,
+                            "document": "Short Term Memory).\nThe sixth chapter introduces you to aspects of NLP (Natural Language \nProcessing, with some basic concepts and algorithms, followed by RL (Re­\ninforcement Learning) and the Bellman equation. The first appendix cov­\ners Keras, whereas the second appendix covers TensorFlow 2.0.\nAnother point: although Jupyter is popular, all the code samples in this \nbook are Python scripts. However, you can quickly learn the useful features",
+                            "distance": 1.003533959388733,
+                            "rerank_score": 2.863978385925293
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p178_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 178,
+                            "document": "C H A P T E R 6\nNLP AND REINFORCEMENT \nLEARNING\nThis chapter provides a casual introduction to NLP (Natural Language \nProcessing) and Reinforcement Learning (RL). Both topics can easily fill \nentire books, often involving complex topics, which means that this chap­\nter provides a limited introduction to these topics. If you want to acquire a \nthorough grasp of BERT (discussed briefly later in the chapter), you need to",
+                            "distance": 1.0615289211273193,
+                            "rerank_score": 2.5244548320770264
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.8389776660073724,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p33_chunk5",
+                            "source": "sample.pdf",
+                            "page_number": 33,
+                            "document": "Natural Language Processing\nIf we wish to build intelligent systems, it seems natural to ask that our sys­\ntems possess a language-understanding facility. This is an axiom that was \nwell understood by many early practitioners. Eliza is one well-known early \napplication program, which was developed by Joseph Weizenbaum‚ an MIT",
+                            "distance": 0.9224486351013184,
+                            "rerank_score": 6.928231716156006
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p20_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 20,
+                            "document": "which include natural language processing (with NLU and NLG), machine \nlearning, deep learning, reinforcement learning, and deep reinforcement \nlearning.",
+                            "distance": 0.9216381907463074,
+                            "rerank_score": 4.506888389587402
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p179_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 179,
+                            "document": "160 • Artificial Intelligence, Machine Learning, Deep Learning\nWorking with NLP (Natural Language Processing)\nThis section highlights some concepts in NLP, and depending on your back­\nground, you might need to perform an online search to learn more about \nsome of the concepts (try Wikipedia). Although the concepts are treated in \na very superficial manner, you will know what to pursue in order to further \nyour study of NLP.\nNLP is currently the focus of significant interest in the machine learn­",
+                            "distance": 0.920418918132782,
+                            "rerank_score": 3.6960678100585938
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p17_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 17,
+                            "document": "Short Term Memory).\nThe sixth chapter introduces you to aspects of NLP (Natural Language \nProcessing, with some basic concepts and algorithms, followed by RL (Re­\ninforcement Learning) and the Bellman equation. The first appendix cov­\ners Keras, whereas the second appendix covers TensorFlow 2.0.\nAnother point: although Jupyter is popular, all the code samples in this \nbook are Python scripts. However, you can quickly learn the useful features",
+                            "distance": 1.003533959388733,
+                            "rerank_score": 2.863978385925293
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p178_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 178,
+                            "document": "C H A P T E R 6\nNLP AND REINFORCEMENT \nLEARNING\nThis chapter provides a casual introduction to NLP (Natural Language \nProcessing) and Reinforcement Learning (RL). Both topics can easily fill \nentire books, often involving complex topics, which means that this chap­\nter provides a limited introduction to these topics. If you want to acquire a \nthorough grasp of BERT (discussed briefly later in the chapter), you need to",
+                            "distance": 1.0615289211273193,
+                            "rerank_score": 2.5244548320770264
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q09",
+            "question": "What are expert systems in Artificial Intelligence?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What are expert systems in Artificial Intelligence?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9578347709816888,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p31_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 31,
+                            "document": "12 • Artificial Intelligence, Machine Learning, Deep Learning\nExpert Systems\nExpert systems are one of the areas that have been investigated for almost \nas long as AI itself has existed. It is one discipline that AI can claim as a \ngreat success. Expert systems have many characteristics that make them \ndesirable for AI research and development. These include separation of \nthe knowledge base from the inference engine, being more than the sum of",
+                            "distance": 0.6839227080345154,
+                            "rerank_score": 7.764715194702148
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p8_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 8,
+                            "document": "Preface\b\nxv\nChapter 1:  Introduction to AI\b\n1\n\t\nWhat is Artificial Intelligence? \b\n2\nStrong AI versus Weak AI \b\n4\n\t\nThe Turing Test\b\n5\nDefinition of the Turing Test\b\n5\nAn Interrogator Test\b\n6\n\t\nHeuristics\b\n6\nGenetic Algorithms\b\n8\n\t\nKnowledge Representation\b\n8\nLogic-based Solutions\b\n9\nSemantic Networks\b\n9\n\t\nAI and Games\b\n10\nThe Success of AlphaZero\b\n11\n\t\nExpert Systems \b\n12\n\t\nNeural Computing\b\n13\n\t\nEvolutionary Computation\b\n14\n\t\nNatural Language Processing\b\n14\n\t\nBioinformatics\b\n17",
+                            "distance": 0.9010205864906311,
+                            "rerank_score": 3.7666015625
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p26_chunk5",
+                            "source": "sample.pdf",
+                            "page_number": 26,
+                            "document": "often of the form: if-condition-then-action. As a trivial example: if you have \na headache, then take two aspirins and call me in the morning. \nIn particular, expert systems became very popular (and very useful) \nbecause they can store far more rules than humans can hold in their head. \nExpert systems are among the most successful AI techniques for produc­\ning results that are comprehensive and effective. In fact, expert systems",
+                            "distance": 0.7209635972976685,
+                            "rerank_score": 3.352734088897705
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p32_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 32,
+                            "document": "tion languages have also been developed. Today, numerous expert systems \nwork behind the scenes to enhance day-to-day experiences, such as the \nonline shopping cart. \nNeural Computing\nMcCulloch and Pitts conducted early research in neural computing because \nthey were trying to understand the behavior of animal nervous systems. \nTheir model of artificial neural networks (ANN) had one serious drawback: \nit did not include a mechanism for learning.",
+                            "distance": 0.9700324535369873,
+                            "rerank_score": 2.654064416885376
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p41_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 41,
+                            "document": "games and expert systems.\nYou also learned about the early approaches to neural computing, evo­\nlutionary computation, NLP, and bioinformatics. In addition, you got an \nintroduction to the major subfields of AI, which include natural language \nprocessing, machine learning, deep learning, reinforcement learning, and \ndeep reinforcement learning.",
+                            "distance": 0.8728473782539368,
+                            "rerank_score": 1.9019407033920288
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9578347709816888,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p31_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 31,
+                            "document": "12 • Artificial Intelligence, Machine Learning, Deep Learning\nExpert Systems\nExpert systems are one of the areas that have been investigated for almost \nas long as AI itself has existed. It is one discipline that AI can claim as a \ngreat success. Expert systems have many characteristics that make them \ndesirable for AI research and development. These include separation of \nthe knowledge base from the inference engine, being more than the sum of",
+                            "distance": 0.6839227080345154,
+                            "rerank_score": 7.764715194702148
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p8_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 8,
+                            "document": "Preface\b\nxv\nChapter 1:  Introduction to AI\b\n1\n\t\nWhat is Artificial Intelligence? \b\n2\nStrong AI versus Weak AI \b\n4\n\t\nThe Turing Test\b\n5\nDefinition of the Turing Test\b\n5\nAn Interrogator Test\b\n6\n\t\nHeuristics\b\n6\nGenetic Algorithms\b\n8\n\t\nKnowledge Representation\b\n8\nLogic-based Solutions\b\n9\nSemantic Networks\b\n9\n\t\nAI and Games\b\n10\nThe Success of AlphaZero\b\n11\n\t\nExpert Systems \b\n12\n\t\nNeural Computing\b\n13\n\t\nEvolutionary Computation\b\n14\n\t\nNatural Language Processing\b\n14\n\t\nBioinformatics\b\n17",
+                            "distance": 0.9010205864906311,
+                            "rerank_score": 3.7666015625
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p26_chunk5",
+                            "source": "sample.pdf",
+                            "page_number": 26,
+                            "document": "often of the form: if-condition-then-action. As a trivial example: if you have \na headache, then take two aspirins and call me in the morning. \nIn particular, expert systems became very popular (and very useful) \nbecause they can store far more rules than humans can hold in their head. \nExpert systems are among the most successful AI techniques for produc­\ning results that are comprehensive and effective. In fact, expert systems",
+                            "distance": 0.7209635972976685,
+                            "rerank_score": 3.352734088897705
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p32_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 32,
+                            "document": "tion languages have also been developed. Today, numerous expert systems \nwork behind the scenes to enhance day-to-day experiences, such as the \nonline shopping cart. \nNeural Computing\nMcCulloch and Pitts conducted early research in neural computing because \nthey were trying to understand the behavior of animal nervous systems. \nTheir model of artificial neural networks (ANN) had one serious drawback: \nit did not include a mechanism for learning.",
+                            "distance": 0.9700324535369873,
+                            "rerank_score": 2.654064416885376
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p41_chunk3",
+                            "source": "sample.pdf",
+                            "page_number": 41,
+                            "document": "games and expert systems.\nYou also learned about the early approaches to neural computing, evo­\nlutionary computation, NLP, and bioinformatics. In addition, you got an \nintroduction to the major subfields of AI, which include natural language \nprocessing, machine learning, deep learning, reinforcement learning, and \ndeep reinforcement learning.",
+                            "distance": 0.8728473782539368,
+                            "rerank_score": 1.9019407033920288
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q10",
+            "question": "What is Reinforcement Learning?",
+            "expected_sources": [
+                "sample.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is Reinforcement Learning?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9686152031181796,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p192_chunk5",
+                            "source": "sample.pdf",
+                            "page_number": 192,
+                            "document": "What Is Reinforcement Learning (RL)?\nReinforcement Learning is a subset of machine learning that attempts \nto find the maximum reward for a so-called agent that interacts with \nan environment. RL is suitable for solving tasks that involve deferred \nrewards, especially when those rewards are greater than intermediate \nrewards. \nIn fact, RL can handle tasks that involve a combination of negative, \nzero, and positive rewards. For example, if you decide to leave your job",
+                            "distance": 0.7161534428596497,
+                            "rerank_score": 11.405731201171875
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p38_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 38,
+                            "document": "architectures (e.g., convolutional neural networks, RNNs, and LSTMs).\nReinforcement Learning\nReinforcement learning (also a subset of machine learning) involves trial-\nand-error in order to maximize a reward for a so-called agent. Deep rein­\nforcement learning combines the strengths of deep learning with reinforce­\nment learning. In particular, the agent in reinforcement learning is replaced \nwith a neural network.",
+                            "distance": 0.7693547010421753,
+                            "rerank_score": 8.118698120117188
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p203_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 203,
+                            "document": "active development, which means that interfaces may change at any time.\nWhat Is Deep Reinforcement Learning (DRL)?\nDeep Reinforcement Learning is a surprisingly effective combination of \ndeep learning and RL that has shown remarkable results in a variety of \ntasks. For example, DRL has won game competitions such as Go (Alpha Go",
+                            "distance": 0.8475400805473328,
+                            "rerank_score": 7.7787370681762695
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p178_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 178,
+                            "document": "reinforcement learning.\nThe third section discusses the TF-Agents toolkit from Google, deep \nreinforcement learning (deep learning combined with reinforcement learn­\ning), and the Google Dopamine toolkit.",
+                            "distance": 0.9288789629936218,
+                            "rerank_score": 5.9681901931762695
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p194_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 194,
+                            "document": "NLP and Reinforcement Learning • 175\n• Robot-legged locomotion \n• Marketing strategy selection \n• Factory control \nRL refers to goal-oriented algorithms for reaching a complex goal, such as \nwinning games that involve multiple moves (e.g., chess or Go). RL algo­\nrithms are penalized for incorrect decisions and rewarded for correct deci­\nsions: this reward mechanism is reinforcement. \nNLP and Reinforcement Learning\nMore recently Reinforcement Learning with NLP has become a suc­",
+                            "distance": 0.8750498294830322,
+                            "rerank_score": 5.160572052001953
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 1.0,
+                        "recall_at_5": 1.0,
+                        "ndcg_at_5": 0.9686152031181796,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p192_chunk5",
+                            "source": "sample.pdf",
+                            "page_number": 192,
+                            "document": "What Is Reinforcement Learning (RL)?\nReinforcement Learning is a subset of machine learning that attempts \nto find the maximum reward for a so-called agent that interacts with \nan environment. RL is suitable for solving tasks that involve deferred \nrewards, especially when those rewards are greater than intermediate \nrewards. \nIn fact, RL can handle tasks that involve a combination of negative, \nzero, and positive rewards. For example, if you decide to leave your job",
+                            "distance": 0.7161534428596497,
+                            "rerank_score": 11.405731201171875
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "sample_p38_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 38,
+                            "document": "architectures (e.g., convolutional neural networks, RNNs, and LSTMs).\nReinforcement Learning\nReinforcement learning (also a subset of machine learning) involves trial-\nand-error in order to maximize a reward for a so-called agent. Deep rein­\nforcement learning combines the strengths of deep learning with reinforce­\nment learning. In particular, the agent in reinforcement learning is replaced \nwith a neural network.",
+                            "distance": 0.7693547010421753,
+                            "rerank_score": 8.118698120117188
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p203_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 203,
+                            "document": "active development, which means that interfaces may change at any time.\nWhat Is Deep Reinforcement Learning (DRL)?\nDeep Reinforcement Learning is a surprisingly effective combination of \ndeep learning and RL that has shown remarkable results in a variety of \ntasks. For example, DRL has won game competitions such as Go (Alpha Go",
+                            "distance": 0.8475400805473328,
+                            "rerank_score": 7.7787370681762695
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p178_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 178,
+                            "document": "reinforcement learning.\nThe third section discusses the TF-Agents toolkit from Google, deep \nreinforcement learning (deep learning combined with reinforcement learn­\ning), and the Google Dopamine toolkit.",
+                            "distance": 0.9288789629936218,
+                            "rerank_score": 5.9681901931762695
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p194_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 194,
+                            "document": "NLP and Reinforcement Learning • 175\n• Robot-legged locomotion \n• Marketing strategy selection \n• Factory control \nRL refers to goal-oriented algorithms for reaching a complex goal, such as \nwinning games that involve multiple moves (e.g., chess or Go). RL algo­\nrithms are penalized for incorrect decisions and rewarded for correct deci­\nsions: this reward mechanism is reinforcement. \nNLP and Reinforcement Learning\nMore recently Reinforcement Learning with NLP has become a suc­",
+                            "distance": 0.8750498294830322,
+                            "rerank_score": 5.160572052001953
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q11",
+            "question": "What is SQL?",
+            "expected_sources": [
+                "31. SQL Notes by Apna College.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is SQL?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 0.25,
+                        "ndcg_at_5": 0.41493919716010286,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p1_chunk1",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 1,
+                            "document": "1 \n \nSQL (Structured Query Language) \n \n \nStructured Query Language \n \nBefore learning about SQL, let’s first try to understand some basic terms that are a pre-\nrequisite for understanding it. \n \n \nWhat is Database? \n \nA database is an organized collection of data that is stored and managed electronically \nso that it can be easily accessed, updated, and analyzed. \n \nNow we could have also stored this data in the form of files (excel, csv etc.) but",
+                            "distance": 0.77433180809021,
+                            "rerank_score": 8.885668754577637
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p1_chunk3",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 1,
+                            "document": "What is Relational Database? \n \nA relational database (RDB) is a type of database that stores data in structured \ntables (relations) with rows and columns and allows relationships between tables \nusing keys. \n \n \nWhat is SQL? \n \nSQL (Structured Query Language) is the standard language used to interact with \nrelational databases. \n \nWe can use SQL to: \n \n• Retrieve data \n• Insert data \n• Update data \n• Delete data \n• Create and manage table \n@Kuldeep_KVG",
+                            "distance": 0.8616258502006531,
+                            "rerank_score": 8.311769485473633
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p2_chunk1",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 2,
+                            "document": "2 \n \nSELECT \nselect \nUsage \n \n \n \n \n \n \n \n \nSQL v/s MySQL \n \nSQL is a language used to perform CRUD operations in Relational DB, while MySQL is \na RDBMS that uses SQL. \n \n \n \n \nSQL Data Types \n \nIn SQL, data types define the kind of data that can be stored in a column or variable. \n \nTo See all data types of MYSQL, visit : \nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html \n \n \n \n \nSELECT * FROM Customers WHERE Amount > 100; \n \n \n Note - SQL keywords are NOT case sensitive.",
+                            "distance": 0.9540674686431885,
+                            "rerank_score": 2.2319588661193848
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p1_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 1,
+                            "document": "database provides us with a lot of features/benefits: \n \n• Organized storage: Keeps data structured and easy to query. \n• Quick access: Efficiently retrieve large amounts of data. \n• Data integrity: Prevents errors and inconsistencies. \n• Multi-user access: Allows multiple users to work with the data simultaneously. \n• Security: Control who can access or modify data. \n• Analytics & Reporting: Essential for dashboards, ML models, and business insights \n \n \nWhat is Relational Database?",
+                            "distance": 0.9973050355911255,
+                            "rerank_score": 1.1038517951965332
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p5_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 5,
+                            "document": "2. Data Query/Retrieval Language (DQL or DRL) \n \nDQL (Data Query Language) is a subset of SQL focused on retrieving data from \ndatabases. \n \nThe SELECT statement is the foundation of DQL and allows us to extract specific \ncolumns from a table. \n \n• SELECT: \n \nThe SELECT statement is used to select data from a database.  \n \nSyntax: SELECT column1, column2, ... FROM table_name;  \n@Kuldeep_KVG",
+                            "distance": 0.9982144236564636,
+                            "rerank_score": -0.20584040880203247
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 0.25,
+                        "ndcg_at_5": 0.41493919716010286,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p1_chunk1",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 1,
+                            "document": "1 \n \nSQL (Structured Query Language) \n \n \nStructured Query Language \n \nBefore learning about SQL, let’s first try to understand some basic terms that are a pre-\nrequisite for understanding it. \n \n \nWhat is Database? \n \nA database is an organized collection of data that is stored and managed electronically \nso that it can be easily accessed, updated, and analyzed. \n \nNow we could have also stored this data in the form of files (excel, csv etc.) but",
+                            "distance": 0.77433180809021,
+                            "rerank_score": 8.885668754577637
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p1_chunk3",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 1,
+                            "document": "What is Relational Database? \n \nA relational database (RDB) is a type of database that stores data in structured \ntables (relations) with rows and columns and allows relationships between tables \nusing keys. \n \n \nWhat is SQL? \n \nSQL (Structured Query Language) is the standard language used to interact with \nrelational databases. \n \nWe can use SQL to: \n \n• Retrieve data \n• Insert data \n• Update data \n• Delete data \n• Create and manage table \n@Kuldeep_KVG",
+                            "distance": 0.8616258502006531,
+                            "rerank_score": 8.311769485473633
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p2_chunk1",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 2,
+                            "document": "2 \n \nSELECT \nselect \nUsage \n \n \n \n \n \n \n \n \nSQL v/s MySQL \n \nSQL is a language used to perform CRUD operations in Relational DB, while MySQL is \na RDBMS that uses SQL. \n \n \n \n \nSQL Data Types \n \nIn SQL, data types define the kind of data that can be stored in a column or variable. \n \nTo See all data types of MYSQL, visit : \nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html \n \n \n \n \nSELECT * FROM Customers WHERE Amount > 100; \n \n \n Note - SQL keywords are NOT case sensitive.",
+                            "distance": 0.9540674686431885,
+                            "rerank_score": 2.2319588661193848
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p1_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 1,
+                            "document": "database provides us with a lot of features/benefits: \n \n• Organized storage: Keeps data structured and easy to query. \n• Quick access: Efficiently retrieve large amounts of data. \n• Data integrity: Prevents errors and inconsistencies. \n• Multi-user access: Allows multiple users to work with the data simultaneously. \n• Security: Control who can access or modify data. \n• Analytics & Reporting: Essential for dashboards, ML models, and business insights \n \n \nWhat is Relational Database?",
+                            "distance": 0.9973050355911255,
+                            "rerank_score": 1.1038517951965332
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p5_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 5,
+                            "document": "2. Data Query/Retrieval Language (DQL or DRL) \n \nDQL (Data Query Language) is a subset of SQL focused on retrieving data from \ndatabases. \n \nThe SELECT statement is the foundation of DQL and allows us to extract specific \ncolumns from a table. \n \n• SELECT: \n \nThe SELECT statement is used to select data from a database.  \n \nSyntax: SELECT column1, column2, ... FROM table_name;  \n@Kuldeep_KVG",
+                            "distance": 0.9982144236564636,
+                            "rerank_score": -0.20584040880203247
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q12",
+            "question": "What are SQL joins?",
+            "expected_sources": [
+                "31. SQL Notes by Apna College.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What are SQL joins?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.0,
+                        "recall_at_5": 0.0,
+                        "ndcg_at_5": 0.0,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p15_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 15,
+                            "document": "TCL commands are used in combination with Data Manipulation Language \n(DML) and other SQL commands to ensure that the database remains in a \nreliable state despite unforeseen errors or issues. \n \n \n \nJoins \n \n \nIn a DBMS, a join is an operation that combines rows from two or more tables \nbased on a related column between them. \nJoins are used to retrieve data from multiple tables by linking them together using a \ncommon key or column. \n \nTypes of Joins:  \n \n1. Inner Join \n2. Outer Join",
+                            "distance": 0.7435901761054993,
+                            "rerank_score": 6.0854034423828125
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p21_chunk2",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 21,
+                            "document": "relationship between employees and their managers. The join condition connects \nthe ManagerID column in the e1 alias (representing employees) with the EmployeeID \ncolumn in the e2 alias (representing managers). \n \n \n \nSet Operations \n \n \n \nSet operations in SQL are used to combine or manipulate the result sets of multiple \nSELECT queries. \nThey allow you to perform operations similar to those in set theory, such as union,",
+                            "distance": 0.9320062398910522,
+                            "rerank_score": 2.776190757751465
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p26_chunk2",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 26,
+                            "document": "Joins \nPurpose \nRetrieve data for filtering, \ncomparison, or calculation within \nthe context of a larger query. \nCombine data from \nrelated tables based on \nspecified conditions. \nData Source \nResult of one query used as input \nfor another query. \nData from multiple related \ntables. \nCombining \nRows \nNot used for combining rows; \nused to filter or evaluate data. \nCombines rows from \ndifferent tables based on \nspecified join conditions. \nResult Set \nStructure \nSubqueries return scalar values,",
+                            "distance": 0.7334769368171692,
+                            "rerank_score": 2.493166446685791
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p19_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 19,
+                            "document": "19 \n \n3) Cross Join \n \nA cross join, also known as a Cartesian product, is a type of join operation in a \nDatabase Management System (DBMS) that combines every row from one table \nwith every row from another table. \n \nUnlike other join types, a cross join does not require a specific condition to match \nrows between the tables. Instead, it generates a result set that contains all possible \ncombinations of rows from both tables.",
+                            "distance": 0.9226863384246826,
+                            "rerank_score": 2.362321138381958
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p25_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 25,
+                            "document": "25 \n \nPerformance \nConsiderations \nGenerally faster and less \ncomplex than joins. \nJoins can be more \ncomplex and resource-\nintensive, especially for \nlarger datasets. \n \n \n \nSub Queries \n \n \nSubqueries, also known as nested queries or inner queries, allow you to use the \nresult of one query (the inner query) as the input for another query (the outer query). \n \nSubqueries are often used to retrieve data that will be used for filtering, comparison,",
+                            "distance": 0.9217522740364075,
+                            "rerank_score": 1.3732647895812988
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.0,
+                        "recall_at_5": 0.0,
+                        "ndcg_at_5": 0.0,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p15_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 15,
+                            "document": "TCL commands are used in combination with Data Manipulation Language \n(DML) and other SQL commands to ensure that the database remains in a \nreliable state despite unforeseen errors or issues. \n \n \n \nJoins \n \n \nIn a DBMS, a join is an operation that combines rows from two or more tables \nbased on a related column between them. \nJoins are used to retrieve data from multiple tables by linking them together using a \ncommon key or column. \n \nTypes of Joins:  \n \n1. Inner Join \n2. Outer Join",
+                            "distance": 0.7435901761054993,
+                            "rerank_score": 6.0854034423828125
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p21_chunk2",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 21,
+                            "document": "relationship between employees and their managers. The join condition connects \nthe ManagerID column in the e1 alias (representing employees) with the EmployeeID \ncolumn in the e2 alias (representing managers). \n \n \n \nSet Operations \n \n \n \nSet operations in SQL are used to combine or manipulate the result sets of multiple \nSELECT queries. \nThey allow you to perform operations similar to those in set theory, such as union,",
+                            "distance": 0.9320062398910522,
+                            "rerank_score": 2.776190757751465
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p26_chunk2",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 26,
+                            "document": "Joins \nPurpose \nRetrieve data for filtering, \ncomparison, or calculation within \nthe context of a larger query. \nCombine data from \nrelated tables based on \nspecified conditions. \nData Source \nResult of one query used as input \nfor another query. \nData from multiple related \ntables. \nCombining \nRows \nNot used for combining rows; \nused to filter or evaluate data. \nCombines rows from \ndifferent tables based on \nspecified join conditions. \nResult Set \nStructure \nSubqueries return scalar values,",
+                            "distance": 0.7334769368171692,
+                            "rerank_score": 2.493166446685791
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p19_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 19,
+                            "document": "19 \n \n3) Cross Join \n \nA cross join, also known as a Cartesian product, is a type of join operation in a \nDatabase Management System (DBMS) that combines every row from one table \nwith every row from another table. \n \nUnlike other join types, a cross join does not require a specific condition to match \nrows between the tables. Instead, it generates a result set that contains all possible \ncombinations of rows from both tables.",
+                            "distance": 0.9226863384246826,
+                            "rerank_score": 2.362321138381958
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p25_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 25,
+                            "document": "25 \n \nPerformance \nConsiderations \nGenerally faster and less \ncomplex than joins. \nJoins can be more \ncomplex and resource-\nintensive, especially for \nlarger datasets. \n \n \n \nSub Queries \n \n \nSubqueries, also known as nested queries or inner queries, allow you to use the \nresult of one query (the inner query) as the input for another query (the outer query). \n \nSubqueries are often used to retrieve data that will be used for filtering, comparison,",
+                            "distance": 0.9217522740364075,
+                            "rerank_score": 1.3732647895812988
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q13",
+            "question": "What is the difference between SQL and MySQL?",
+            "expected_sources": [
+                "31. SQL Notes by Apna College.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is the difference between SQL and MySQL?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.6,
+                        "recall_at_5": 0.75,
+                        "ndcg_at_5": 0.8616869342799657,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p2_chunk1",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 2,
+                            "document": "2 \n \nSELECT \nselect \nUsage \n \n \n \n \n \n \n \n \nSQL v/s MySQL \n \nSQL is a language used to perform CRUD operations in Relational DB, while MySQL is \na RDBMS that uses SQL. \n \n \n \n \nSQL Data Types \n \nIn SQL, data types define the kind of data that can be stored in a column or variable. \n \nTo See all data types of MYSQL, visit : \nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html \n \n \n \n \nSELECT * FROM Customers WHERE Amount > 100; \n \n \n Note - SQL keywords are NOT case sensitive.",
+                            "distance": 0.7490034699440002,
+                            "rerank_score": 7.851764678955078
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p1_chunk1",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 1,
+                            "document": "1 \n \nSQL (Structured Query Language) \n \n \nStructured Query Language \n \nBefore learning about SQL, let’s first try to understand some basic terms that are a pre-\nrequisite for understanding it. \n \n \nWhat is Database? \n \nA database is an organized collection of data that is stored and managed electronically \nso that it can be easily accessed, updated, and analyzed. \n \nNow we could have also stored this data in the form of files (excel, csv etc.) but",
+                            "distance": 0.9079278707504272,
+                            "rerank_score": 1.9467710256576538
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p1_chunk3",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 1,
+                            "document": "What is Relational Database? \n \nA relational database (RDB) is a type of database that stores data in structured \ntables (relations) with rows and columns and allows relationships between tables \nusing keys. \n \n \nWhat is SQL? \n \nSQL (Structured Query Language) is the standard language used to interact with \nrelational databases. \n \nWe can use SQL to: \n \n• Retrieve data \n• Insert data \n• Update data \n• Delete data \n• Create and manage table \n@Kuldeep_KVG",
+                            "distance": 0.9910979270935059,
+                            "rerank_score": 0.875618577003479
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p5_chunk3",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 5,
+                            "document": "2. Data Query/Retrieval Language (DQL or DRL) \n \nDQL (Data Query Language) is a subset of SQL focused on retrieving data from \ndatabases. \n \nThe SELECT statement is the foundation of DQL and allows us to extract specific \ncolumns from a table. \n \n• SELECT: \n \nThe SELECT statement is used to select data from a database.  \n \nSyntax: SELECT column1, column2, ... FROM table_name;  \n@Kuldeep_KVG",
+                            "distance": 1.0084125995635986,
+                            "rerank_score": -2.581827163696289
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p4_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 4,
+                            "document": "4 \n \n3. DML (Data Manipulation Language): Used to modify the database. (INSERT, \nUPDATE, DELETE) \n \n4. DCL (Data Control Language): Used to grant & revoke permissions. (GRANT, \nREVOKE) \n \n5. TCL (Transaction Control Language): Used to manage transactions. \n(COMMIT, ROLLBACK, START TRANSACTIONS, SAVEPOINT) \n \n \n \n \n \n1. Data Definition Language (DDL) \n \nData Definition Language (DDL) is a subset of SQL (Structured Query Language)",
+                            "distance": 1.118409514427185,
+                            "rerank_score": -3.0295684337615967
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.6,
+                        "recall_at_5": 0.75,
+                        "ndcg_at_5": 0.8616869342799657,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p2_chunk1",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 2,
+                            "document": "2 \n \nSELECT \nselect \nUsage \n \n \n \n \n \n \n \n \nSQL v/s MySQL \n \nSQL is a language used to perform CRUD operations in Relational DB, while MySQL is \na RDBMS that uses SQL. \n \n \n \n \nSQL Data Types \n \nIn SQL, data types define the kind of data that can be stored in a column or variable. \n \nTo See all data types of MYSQL, visit : \nhttps://dev.mysql.com/doc/refman/8.0/en/data-types.html \n \n \n \n \nSELECT * FROM Customers WHERE Amount > 100; \n \n \n Note - SQL keywords are NOT case sensitive.",
+                            "distance": 0.7490034699440002,
+                            "rerank_score": 7.851764678955078
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p1_chunk1",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 1,
+                            "document": "1 \n \nSQL (Structured Query Language) \n \n \nStructured Query Language \n \nBefore learning about SQL, let’s first try to understand some basic terms that are a pre-\nrequisite for understanding it. \n \n \nWhat is Database? \n \nA database is an organized collection of data that is stored and managed electronically \nso that it can be easily accessed, updated, and analyzed. \n \nNow we could have also stored this data in the form of files (excel, csv etc.) but",
+                            "distance": 0.9079278707504272,
+                            "rerank_score": 1.9467710256576538
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p1_chunk3",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 1,
+                            "document": "What is Relational Database? \n \nA relational database (RDB) is a type of database that stores data in structured \ntables (relations) with rows and columns and allows relationships between tables \nusing keys. \n \n \nWhat is SQL? \n \nSQL (Structured Query Language) is the standard language used to interact with \nrelational databases. \n \nWe can use SQL to: \n \n• Retrieve data \n• Insert data \n• Update data \n• Delete data \n• Create and manage table \n@Kuldeep_KVG",
+                            "distance": 0.9910979270935059,
+                            "rerank_score": 0.875618577003479
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p5_chunk3",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 5,
+                            "document": "2. Data Query/Retrieval Language (DQL or DRL) \n \nDQL (Data Query Language) is a subset of SQL focused on retrieving data from \ndatabases. \n \nThe SELECT statement is the foundation of DQL and allows us to extract specific \ncolumns from a table. \n \n• SELECT: \n \nThe SELECT statement is used to select data from a database.  \n \nSyntax: SELECT column1, column2, ... FROM table_name;  \n@Kuldeep_KVG",
+                            "distance": 1.0084125995635986,
+                            "rerank_score": -2.581827163696289
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p4_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 4,
+                            "document": "4 \n \n3. DML (Data Manipulation Language): Used to modify the database. (INSERT, \nUPDATE, DELETE) \n \n4. DCL (Data Control Language): Used to grant & revoke permissions. (GRANT, \nREVOKE) \n \n5. TCL (Transaction Control Language): Used to manage transactions. \n(COMMIT, ROLLBACK, START TRANSACTIONS, SAVEPOINT) \n \n \n \n \n \n1. Data Definition Language (DDL) \n \nData Definition Language (DDL) is a subset of SQL (Structured Query Language)",
+                            "distance": 1.118409514427185,
+                            "rerank_score": -3.0295684337615967
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q14",
+            "question": "What is a database transaction in SQL?",
+            "expected_sources": [
+                "31. SQL Notes by Apna College.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is a database transaction in SQL?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 0.25,
+                        "ndcg_at_5": 0.06642999534512085,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p13_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 13,
+                            "document": "executed as a single unit of work. \nTransactions ensure data consistency, integrity, and reliability in a database by \ngrouping related operations together and either committing or rolling back \nchanges based on the success or failure of those operations. \n \nThere are three main TCL commands in SQL: COMMIT, ROLLBACK, and \nSAVEPOINT. \n \n• COMMIT: \n \nThe COMMIT command is used to permanently save the changes made \nduring a transaction.",
+                            "distance": 0.8177633285522461,
+                            "rerank_score": 4.889748573303223
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p1_chunk1",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 1,
+                            "document": "1 \n \nSQL (Structured Query Language) \n \n \nStructured Query Language \n \nBefore learning about SQL, let’s first try to understand some basic terms that are a pre-\nrequisite for understanding it. \n \n \nWhat is Database? \n \nA database is an organized collection of data that is stored and managed electronically \nso that it can be easily accessed, updated, and analyzed. \n \nNow we could have also stored this data in the form of files (excel, csv etc.) but",
+                            "distance": 0.8850750923156738,
+                            "rerank_score": 2.9697632789611816
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p1_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 1,
+                            "document": "What is Relational Database? \n \nA relational database (RDB) is a type of database that stores data in structured \ntables (relations) with rows and columns and allows relationships between tables \nusing keys. \n \n \nWhat is SQL? \n \nSQL (Structured Query Language) is the standard language used to interact with \nrelational databases. \n \nWe can use SQL to: \n \n• Retrieve data \n• Insert data \n• Update data \n• Delete data \n• Create and manage table \n@Kuldeep_KVG",
+                            "distance": 0.9299187064170837,
+                            "rerank_score": 2.9059691429138184
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "from tampering with or accessing sensitive data. Proper use of GRANT and \nREVOKE commands ensures that only users who require specific privileges can \nperform certain actions on database objects. \n \n \n \n5. Transaction Control Language (TCL) \n \nTransaction Control Language (TCL) deals with the management of transactions \nwithin a database. \nTCL commands are used to control the initiation, execution, and termination of \ntransactions, which are sequences of one or more SQL statements that are",
+                            "distance": 1.0246460437774658,
+                            "rerank_score": 0.5558468699455261
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p13_chunk4",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 13,
+                            "document": "during a transaction.  \n \nIt makes all the changes applied to the database since the last COMMIT or \nROLLBACK command permanent. \nOnce a COMMIT is executed, the transaction is considered successful, and \nthe changes are made permanent. \n \nExample: Committing changes made during a transaction: \n \nUPDATE Employees \n@Kuldeep_KVG",
+                            "distance": 0.8175231218338013,
+                            "rerank_score": 0.44031304121017456
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 0.25,
+                        "ndcg_at_5": 0.06642999534512085,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p13_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 13,
+                            "document": "executed as a single unit of work. \nTransactions ensure data consistency, integrity, and reliability in a database by \ngrouping related operations together and either committing or rolling back \nchanges based on the success or failure of those operations. \n \nThere are three main TCL commands in SQL: COMMIT, ROLLBACK, and \nSAVEPOINT. \n \n• COMMIT: \n \nThe COMMIT command is used to permanently save the changes made \nduring a transaction.",
+                            "distance": 0.8177633285522461,
+                            "rerank_score": 4.889748573303223
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p1_chunk1",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 1,
+                            "document": "1 \n \nSQL (Structured Query Language) \n \n \nStructured Query Language \n \nBefore learning about SQL, let’s first try to understand some basic terms that are a pre-\nrequisite for understanding it. \n \n \nWhat is Database? \n \nA database is an organized collection of data that is stored and managed electronically \nso that it can be easily accessed, updated, and analyzed. \n \nNow we could have also stored this data in the form of files (excel, csv etc.) but",
+                            "distance": 0.8850750923156738,
+                            "rerank_score": 2.9697632789611816
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p1_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 1,
+                            "document": "What is Relational Database? \n \nA relational database (RDB) is a type of database that stores data in structured \ntables (relations) with rows and columns and allows relationships between tables \nusing keys. \n \n \nWhat is SQL? \n \nSQL (Structured Query Language) is the standard language used to interact with \nrelational databases. \n \nWe can use SQL to: \n \n• Retrieve data \n• Insert data \n• Update data \n• Delete data \n• Create and manage table \n@Kuldeep_KVG",
+                            "distance": 0.9299187064170837,
+                            "rerank_score": 2.9059691429138184
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "from tampering with or accessing sensitive data. Proper use of GRANT and \nREVOKE commands ensures that only users who require specific privileges can \nperform certain actions on database objects. \n \n \n \n5. Transaction Control Language (TCL) \n \nTransaction Control Language (TCL) deals with the management of transactions \nwithin a database. \nTCL commands are used to control the initiation, execution, and termination of \ntransactions, which are sequences of one or more SQL statements that are",
+                            "distance": 1.0246460437774658,
+                            "rerank_score": 0.5558468699455261
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p13_chunk4",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 13,
+                            "document": "during a transaction.  \n \nIt makes all the changes applied to the database since the last COMMIT or \nROLLBACK command permanent. \nOnce a COMMIT is executed, the transaction is considered successful, and \nthe changes are made permanent. \n \nExample: Committing changes made during a transaction: \n \nUPDATE Employees \n@Kuldeep_KVG",
+                            "distance": 0.8175231218338013,
+                            "rerank_score": 0.44031304121017456
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q15",
+            "question": "How do transactions maintain data consistency and integrity in SQL?",
+            "expected_sources": [
+                "31. SQL Notes by Apna College.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "How do transactions maintain data consistency and integrity in SQL?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 0.2,
+                        "ndcg_at_5": 0.2625111813898523,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk3",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "executed as a single unit of work. \nTransactions ensure data consistency, integrity, and reliability in a database by \ngrouping related operations together and either committing or rolling back \nchanges based on the success or failure of those operations. \n \nThere are three main TCL commands in SQL: COMMIT, ROLLBACK, and \nSAVEPOINT. \n \n• COMMIT: \n \nThe COMMIT command is used to permanently save the changes made \nduring a transaction.",
+                            "distance": 0.8394936323165894,
+                            "rerank_score": 8.238348007202148
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p15_chunk1",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 15,
+                            "document": "15 \n \nWHERE AccountID = 456; \n \n-- An error occurs here  \n \nROLLBACK TO before_withdrawal; \n \n-- The first update is still applied  \n \nCOMMIT; \n \n \nTCL and Transaction Management: \n \nTransaction Control Language (TCL) commands are vital for managing the \nintegrity and consistency of a database's data. \nThey allow you to group related changes into transactions, and in the event of \nerrors, either commit those changes or roll them back to maintain data integrity.",
+                            "distance": 1.028470516204834,
+                            "rerank_score": 6.230192184448242
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p1_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 1,
+                            "document": "database provides us with a lot of features/benefits: \n \n• Organized storage: Keeps data structured and easy to query. \n• Quick access: Efficiently retrieve large amounts of data. \n• Data integrity: Prevents errors and inconsistencies. \n• Multi-user access: Allows multiple users to work with the data simultaneously. \n• Security: Control who can access or modify data. \n• Analytics & Reporting: Essential for dashboards, ML models, and business insights \n \n \nWhat is Relational Database?",
+                            "distance": 1.1345696449279785,
+                            "rerank_score": -2.3116025924682617
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "from tampering with or accessing sensitive data. Proper use of GRANT and \nREVOKE commands ensures that only users who require specific privileges can \nperform certain actions on database objects. \n \n \n \n5. Transaction Control Language (TCL) \n \nTransaction Control Language (TCL) deals with the management of transactions \nwithin a database. \nTCL commands are used to control the initiation, execution, and termination of \ntransactions, which are sequences of one or more SQL statements that are",
+                            "distance": 1.092800498008728,
+                            "rerank_score": -3.8828725814819336
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk4",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "during a transaction.  \n \nIt makes all the changes applied to the database since the last COMMIT or \nROLLBACK command permanent. \nOnce a COMMIT is executed, the transaction is considered successful, and \nthe changes are made permanent. \n \nExample: Committing changes made during a transaction: \n \nUPDATE Employees \n@Kuldeep_KVG",
+                            "distance": 0.9347295165061951,
+                            "rerank_score": -4.5918779373168945
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 0.2,
+                        "ndcg_at_5": 0.2625111813898523,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk3",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "executed as a single unit of work. \nTransactions ensure data consistency, integrity, and reliability in a database by \ngrouping related operations together and either committing or rolling back \nchanges based on the success or failure of those operations. \n \nThere are three main TCL commands in SQL: COMMIT, ROLLBACK, and \nSAVEPOINT. \n \n• COMMIT: \n \nThe COMMIT command is used to permanently save the changes made \nduring a transaction.",
+                            "distance": 0.8394936323165894,
+                            "rerank_score": 8.238348007202148
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p15_chunk1",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 15,
+                            "document": "15 \n \nWHERE AccountID = 456; \n \n-- An error occurs here  \n \nROLLBACK TO before_withdrawal; \n \n-- The first update is still applied  \n \nCOMMIT; \n \n \nTCL and Transaction Management: \n \nTransaction Control Language (TCL) commands are vital for managing the \nintegrity and consistency of a database's data. \nThey allow you to group related changes into transactions, and in the event of \nerrors, either commit those changes or roll them back to maintain data integrity.",
+                            "distance": 1.028470516204834,
+                            "rerank_score": 6.230192184448242
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p1_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 1,
+                            "document": "database provides us with a lot of features/benefits: \n \n• Organized storage: Keeps data structured and easy to query. \n• Quick access: Efficiently retrieve large amounts of data. \n• Data integrity: Prevents errors and inconsistencies. \n• Multi-user access: Allows multiple users to work with the data simultaneously. \n• Security: Control who can access or modify data. \n• Analytics & Reporting: Essential for dashboards, ML models, and business insights \n \n \nWhat is Relational Database?",
+                            "distance": 1.1345696449279785,
+                            "rerank_score": -2.3116025924682617
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "from tampering with or accessing sensitive data. Proper use of GRANT and \nREVOKE commands ensures that only users who require specific privileges can \nperform certain actions on database objects. \n \n \n \n5. Transaction Control Language (TCL) \n \nTransaction Control Language (TCL) deals with the management of transactions \nwithin a database. \nTCL commands are used to control the initiation, execution, and termination of \ntransactions, which are sequences of one or more SQL statements that are",
+                            "distance": 1.092800498008728,
+                            "rerank_score": -3.8828725814819336
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk4",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "during a transaction.  \n \nIt makes all the changes applied to the database since the last COMMIT or \nROLLBACK command permanent. \nOnce a COMMIT is executed, the transaction is considered successful, and \nthe changes are made permanent. \n \nExample: Committing changes made during a transaction: \n \nUPDATE Employees \n@Kuldeep_KVG",
+                            "distance": 0.9347295165061951,
+                            "rerank_score": -4.5918779373168945
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q16",
+            "question": "What is the purpose of the COMMIT command in SQL?",
+            "expected_sources": [
+                "31. SQL Notes by Apna College.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is the purpose of the COMMIT command in SQL?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 0.25,
+                        "ndcg_at_5": 0.2575785703353275,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk3",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "executed as a single unit of work. \nTransactions ensure data consistency, integrity, and reliability in a database by \ngrouping related operations together and either committing or rolling back \nchanges based on the success or failure of those operations. \n \nThere are three main TCL commands in SQL: COMMIT, ROLLBACK, and \nSAVEPOINT. \n \n• COMMIT: \n \nThe COMMIT command is used to permanently save the changes made \nduring a transaction.",
+                            "distance": 0.8216041326522827,
+                            "rerank_score": 7.407984733581543
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p15_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 15,
+                            "document": "15 \n \nWHERE AccountID = 456; \n \n-- An error occurs here  \n \nROLLBACK TO before_withdrawal; \n \n-- The first update is still applied  \n \nCOMMIT; \n \n \nTCL and Transaction Management: \n \nTransaction Control Language (TCL) commands are vital for managing the \nintegrity and consistency of a database's data. \nThey allow you to group related changes into transactions, and in the event of \nerrors, either commit those changes or roll them back to maintain data integrity.",
+                            "distance": 1.003857970237732,
+                            "rerank_score": 4.080078601837158
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p13_chunk4",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 13,
+                            "document": "during a transaction.  \n \nIt makes all the changes applied to the database since the last COMMIT or \nROLLBACK command permanent. \nOnce a COMMIT is executed, the transaction is considered successful, and \nthe changes are made permanent. \n \nExample: Committing changes made during a transaction: \n \nUPDATE Employees \n@Kuldeep_KVG",
+                            "distance": 0.8192754983901978,
+                            "rerank_score": 3.4707865715026855
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p14_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 14,
+                            "document": "14 \n \nSET Salary = Salary * 1.10  \nWHERE Department = 'Sales'; \n \nCOMMIT; \n \n \n• ROLLBACK: \n \nThe ROLLBACK command is used to undo changes made during a transaction. \nIt reverts all the changes applied to the database since the transaction began. \n \nROLLBACK is typically used when an error occurs during the execution of a \ntransaction, ensuring that the database remains in a consistent state. \n \nExample: Rolling back changes due to an error during a transaction:  \n \nBEGIN; \n \nUPDATE Inventory",
+                            "distance": 1.0411748886108398,
+                            "rerank_score": 1.8696874380111694
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "from tampering with or accessing sensitive data. Proper use of GRANT and \nREVOKE commands ensures that only users who require specific privileges can \nperform certain actions on database objects. \n \n \n \n5. Transaction Control Language (TCL) \n \nTransaction Control Language (TCL) deals with the management of transactions \nwithin a database. \nTCL commands are used to control the initiation, execution, and termination of \ntransactions, which are sequences of one or more SQL statements that are",
+                            "distance": 1.104740858078003,
+                            "rerank_score": -0.03984188660979271
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.2,
+                        "recall_at_5": 0.25,
+                        "ndcg_at_5": 0.2575785703353275,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk3",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "executed as a single unit of work. \nTransactions ensure data consistency, integrity, and reliability in a database by \ngrouping related operations together and either committing or rolling back \nchanges based on the success or failure of those operations. \n \nThere are three main TCL commands in SQL: COMMIT, ROLLBACK, and \nSAVEPOINT. \n \n• COMMIT: \n \nThe COMMIT command is used to permanently save the changes made \nduring a transaction.",
+                            "distance": 0.8216041326522827,
+                            "rerank_score": 7.407984733581543
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p15_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 15,
+                            "document": "15 \n \nWHERE AccountID = 456; \n \n-- An error occurs here  \n \nROLLBACK TO before_withdrawal; \n \n-- The first update is still applied  \n \nCOMMIT; \n \n \nTCL and Transaction Management: \n \nTransaction Control Language (TCL) commands are vital for managing the \nintegrity and consistency of a database's data. \nThey allow you to group related changes into transactions, and in the event of \nerrors, either commit those changes or roll them back to maintain data integrity.",
+                            "distance": 1.003857970237732,
+                            "rerank_score": 4.080078601837158
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_61abe913_p13_chunk4",
+                            "source": "31. SQL Notes by Apna College_61abe913.pdf",
+                            "page_number": 13,
+                            "document": "during a transaction.  \n \nIt makes all the changes applied to the database since the last COMMIT or \nROLLBACK command permanent. \nOnce a COMMIT is executed, the transaction is considered successful, and \nthe changes are made permanent. \n \nExample: Committing changes made during a transaction: \n \nUPDATE Employees \n@Kuldeep_KVG",
+                            "distance": 0.8192754983901978,
+                            "rerank_score": 3.4707865715026855
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p14_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 14,
+                            "document": "14 \n \nSET Salary = Salary * 1.10  \nWHERE Department = 'Sales'; \n \nCOMMIT; \n \n \n• ROLLBACK: \n \nThe ROLLBACK command is used to undo changes made during a transaction. \nIt reverts all the changes applied to the database since the transaction began. \n \nROLLBACK is typically used when an error occurs during the execution of a \ntransaction, ensuring that the database remains in a consistent state. \n \nExample: Rolling back changes due to an error during a transaction:  \n \nBEGIN; \n \nUPDATE Inventory",
+                            "distance": 1.0411748886108398,
+                            "rerank_score": 1.8696874380111694
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p13_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 13,
+                            "document": "from tampering with or accessing sensitive data. Proper use of GRANT and \nREVOKE commands ensures that only users who require specific privileges can \nperform certain actions on database objects. \n \n \n \n5. Transaction Control Language (TCL) \n \nTransaction Control Language (TCL) deals with the management of transactions \nwithin a database. \nTCL commands are used to control the initiation, execution, and termination of \ntransactions, which are sequences of one or more SQL statements that are",
+                            "distance": 1.104740858078003,
+                            "rerank_score": -0.03984188660979271
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q17",
+            "question": "What is the purpose of the ROLLBACK command in SQL?",
+            "expected_sources": [
+                "31. SQL Notes by Apna College.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What is the purpose of the ROLLBACK command in SQL?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.0,
+                        "recall_at_5": 0.0,
+                        "ndcg_at_5": 0.0,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p14_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 14,
+                            "document": "14 \n \nSET Salary = Salary * 1.10  \nWHERE Department = 'Sales'; \n \nCOMMIT; \n \n \n• ROLLBACK: \n \nThe ROLLBACK command is used to undo changes made during a transaction. \nIt reverts all the changes applied to the database since the transaction began. \n \nROLLBACK is typically used when an error occurs during the execution of a \ntransaction, ensuring that the database remains in a consistent state. \n \nExample: Rolling back changes due to an error during a transaction:  \n \nBEGIN; \n \nUPDATE Inventory",
+                            "distance": 0.7591672539710999,
+                            "rerank_score": 6.95269775390625
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p13_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 13,
+                            "document": "executed as a single unit of work. \nTransactions ensure data consistency, integrity, and reliability in a database by \ngrouping related operations together and either committing or rolling back \nchanges based on the success or failure of those operations. \n \nThere are three main TCL commands in SQL: COMMIT, ROLLBACK, and \nSAVEPOINT. \n \n• COMMIT: \n \nThe COMMIT command is used to permanently save the changes made \nduring a transaction.",
+                            "distance": 0.9471793174743652,
+                            "rerank_score": 6.365631103515625
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p15_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 15,
+                            "document": "15 \n \nWHERE AccountID = 456; \n \n-- An error occurs here  \n \nROLLBACK TO before_withdrawal; \n \n-- The first update is still applied  \n \nCOMMIT; \n \n \nTCL and Transaction Management: \n \nTransaction Control Language (TCL) commands are vital for managing the \nintegrity and consistency of a database's data. \nThey allow you to group related changes into transactions, and in the event of \nerrors, either commit those changes or roll them back to maintain data integrity.",
+                            "distance": 0.916846752166748,
+                            "rerank_score": 4.934956073760986
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p13_chunk4",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 13,
+                            "document": "during a transaction.  \n \nIt makes all the changes applied to the database since the last COMMIT or \nROLLBACK command permanent. \nOnce a COMMIT is executed, the transaction is considered successful, and \nthe changes are made permanent. \n \nExample: Committing changes made during a transaction: \n \nUPDATE Employees \n@Kuldeep_KVG",
+                            "distance": 0.9180399775505066,
+                            "rerank_score": 3.512969732284546
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p14_chunk2",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 14,
+                            "document": "BEGIN; \n \nUPDATE Inventory \nSET Quantity = Quantity - 10  \nWHERE ProductID = 101; \n \n-- An error occurs here ROLLBACK; \n \n \n• SAVEPOINT: \n \nThe SAVEPOINT command creates a named point within a transaction, \nallowing you to set a point to which you can later ROLLBACK if needed. \n \nSAVEPOINTs are useful when you want to undo part of a transaction while \npreserving other changes. \n \nSyntax: SAVEPOINT savepoint_name; \n \nExample: Using SAVEPOINT to create a point within a transaction:  \n \nBEGIN;",
+                            "distance": 1.0655853748321533,
+                            "rerank_score": 3.0948424339294434
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.0,
+                        "recall_at_5": 0.0,
+                        "ndcg_at_5": 0.0,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p14_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 14,
+                            "document": "14 \n \nSET Salary = Salary * 1.10  \nWHERE Department = 'Sales'; \n \nCOMMIT; \n \n \n• ROLLBACK: \n \nThe ROLLBACK command is used to undo changes made during a transaction. \nIt reverts all the changes applied to the database since the transaction began. \n \nROLLBACK is typically used when an error occurs during the execution of a \ntransaction, ensuring that the database remains in a consistent state. \n \nExample: Rolling back changes due to an error during a transaction:  \n \nBEGIN; \n \nUPDATE Inventory",
+                            "distance": 0.7591672539710999,
+                            "rerank_score": 6.95269775390625
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p13_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 13,
+                            "document": "executed as a single unit of work. \nTransactions ensure data consistency, integrity, and reliability in a database by \ngrouping related operations together and either committing or rolling back \nchanges based on the success or failure of those operations. \n \nThere are three main TCL commands in SQL: COMMIT, ROLLBACK, and \nSAVEPOINT. \n \n• COMMIT: \n \nThe COMMIT command is used to permanently save the changes made \nduring a transaction.",
+                            "distance": 0.9471793174743652,
+                            "rerank_score": 6.365631103515625
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p15_chunk1",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 15,
+                            "document": "15 \n \nWHERE AccountID = 456; \n \n-- An error occurs here  \n \nROLLBACK TO before_withdrawal; \n \n-- The first update is still applied  \n \nCOMMIT; \n \n \nTCL and Transaction Management: \n \nTransaction Control Language (TCL) commands are vital for managing the \nintegrity and consistency of a database's data. \nThey allow you to group related changes into transactions, and in the event of \nerrors, either commit those changes or roll them back to maintain data integrity.",
+                            "distance": 0.916846752166748,
+                            "rerank_score": 4.934956073760986
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p13_chunk4",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 13,
+                            "document": "during a transaction.  \n \nIt makes all the changes applied to the database since the last COMMIT or \nROLLBACK command permanent. \nOnce a COMMIT is executed, the transaction is considered successful, and \nthe changes are made permanent. \n \nExample: Committing changes made during a transaction: \n \nUPDATE Employees \n@Kuldeep_KVG",
+                            "distance": 0.9180399775505066,
+                            "rerank_score": 3.512969732284546
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p14_chunk2",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 14,
+                            "document": "BEGIN; \n \nUPDATE Inventory \nSET Quantity = Quantity - 10  \nWHERE ProductID = 101; \n \n-- An error occurs here ROLLBACK; \n \n \n• SAVEPOINT: \n \nThe SAVEPOINT command creates a named point within a transaction, \nallowing you to set a point to which you can later ROLLBACK if needed. \n \nSAVEPOINTs are useful when you want to undo part of a transaction while \npreserving other changes. \n \nSyntax: SAVEPOINT savepoint_name; \n \nExample: Using SAVEPOINT to create a point within a transaction:  \n \nBEGIN;",
+                            "distance": 1.0655853748321533,
+                            "rerank_score": 3.0948424339294434
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q18",
+            "question": "What are subqueries in SQL?",
+            "expected_sources": [
+                "31. SQL Notes by Apna College.pdf"
+            ],
+            "answerable": true,
+            "generated_queries": [
+                "What are subqueries in SQL?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.0,
+                        "recall_at_5": 0.0,
+                        "ndcg_at_5": 0.0,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p25_chunk1",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 25,
+                            "document": "25 \n \nPerformance \nConsiderations \nGenerally faster and less \ncomplex than joins. \nJoins can be more \ncomplex and resource-\nintensive, especially for \nlarger datasets. \n \n \n \nSub Queries \n \n \nSubqueries, also known as nested queries or inner queries, allow you to use the \nresult of one query (the inner query) as the input for another query (the outer query). \n \nSubqueries are often used to retrieve data that will be used for filtering, comparison,",
+                            "distance": 0.8185428977012634,
+                            "rerank_score": 6.213380336761475
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p26_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 26,
+                            "document": "Structure \nSubqueries return scalar values, \nsingle-column results, or small \nresult sets. \nJoins return multi-column \nresult sets. \nPerformance \nConsiderations \nSubqueries can be slower and \nless efficient, especially when \ndealing with large datasets. \nJoins can be more \nefficient for combining \ndata from multiple tables. \nComplexity \nSubqueries can be easier to \nunderstand for simple tasks or \nsmaller datasets. \nJoins can become \ncomplex, but are more \nsuited for handling large-",
+                            "distance": 0.8675824403762817,
+                            "rerank_score": 3.77095365524292
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p26_chunk4",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 26,
+                            "document": "complex, but are more \nsuited for handling large-\nscale data retrieval and \ncombination tasks. \nVersatility \nSubqueries can be used in \nvarious clauses: WHERE, FROM, \nHAVING, etc. \nJoins are primarily used in \nthe FROM clause for \ncombining tables. \n \n \n|   Keep Learning & Keep Exploring! \n@Kuldeep_KVG",
+                            "distance": 0.826962411403656,
+                            "rerank_score": 3.2742397785186768
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p26_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 26,
+                            "document": "Joins \nPurpose \nRetrieve data for filtering, \ncomparison, or calculation within \nthe context of a larger query. \nCombine data from \nrelated tables based on \nspecified conditions. \nData Source \nResult of one query used as input \nfor another query. \nData from multiple related \ntables. \nCombining \nRows \nNot used for combining rows; \nused to filter or evaluate data. \nCombines rows from \ndifferent tables based on \nspecified join conditions. \nResult Set \nStructure \nSubqueries return scalar values,",
+                            "distance": 0.9535104632377625,
+                            "rerank_score": 1.2520294189453125
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p25_chunk3",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 25,
+                            "document": "• OPERATOR is a comparison operator such as =, >, <, IN, NOT IN, etc. \n• (SELECT column FROM table WHERE condition) is the subquery that provides \nthe input for the comparison. \n \nExample: Consider two tables: Products and Orders.  \n \nProducts Table: \n \nProductID \nProductName \nPrice \n1 \nLaptop \n1000 \n2 \nSmartphone \n500 \n3 \nHeadphones \n50 \n \n \n \n \n@Kuldeep_KVG",
+                            "distance": 0.9308331608772278,
+                            "rerank_score": -1.3998934030532837
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": 0.0,
+                        "recall_at_5": 0.0,
+                        "ndcg_at_5": 0.0,
+                        "unanswerable_non_relevant_rate": null
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p25_chunk1",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 25,
+                            "document": "25 \n \nPerformance \nConsiderations \nGenerally faster and less \ncomplex than joins. \nJoins can be more \ncomplex and resource-\nintensive, especially for \nlarger datasets. \n \n \n \nSub Queries \n \n \nSubqueries, also known as nested queries or inner queries, allow you to use the \nresult of one query (the inner query) as the input for another query (the outer query). \n \nSubqueries are often used to retrieve data that will be used for filtering, comparison,",
+                            "distance": 0.8185428977012634,
+                            "rerank_score": 6.213380336761475
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "31. SQL Notes by Apna College_d7c03a9b_p26_chunk3",
+                            "source": "31. SQL Notes by Apna College_d7c03a9b.pdf",
+                            "page_number": 26,
+                            "document": "Structure \nSubqueries return scalar values, \nsingle-column results, or small \nresult sets. \nJoins return multi-column \nresult sets. \nPerformance \nConsiderations \nSubqueries can be slower and \nless efficient, especially when \ndealing with large datasets. \nJoins can be more \nefficient for combining \ndata from multiple tables. \nComplexity \nSubqueries can be easier to \nunderstand for simple tasks or \nsmaller datasets. \nJoins can become \ncomplex, but are more \nsuited for handling large-",
+                            "distance": 0.8675824403762817,
+                            "rerank_score": 3.77095365524292
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p26_chunk4",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 26,
+                            "document": "complex, but are more \nsuited for handling large-\nscale data retrieval and \ncombination tasks. \nVersatility \nSubqueries can be used in \nvarious clauses: WHERE, FROM, \nHAVING, etc. \nJoins are primarily used in \nthe FROM clause for \ncombining tables. \n \n \n|   Keep Learning & Keep Exploring! \n@Kuldeep_KVG",
+                            "distance": 0.826962411403656,
+                            "rerank_score": 3.2742397785186768
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p26_chunk2",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 26,
+                            "document": "Joins \nPurpose \nRetrieve data for filtering, \ncomparison, or calculation within \nthe context of a larger query. \nCombine data from \nrelated tables based on \nspecified conditions. \nData Source \nResult of one query used as input \nfor another query. \nData from multiple related \ntables. \nCombining \nRows \nNot used for combining rows; \nused to filter or evaluate data. \nCombines rows from \ndifferent tables based on \nspecified join conditions. \nResult Set \nStructure \nSubqueries return scalar values,",
+                            "distance": 0.9535104632377625,
+                            "rerank_score": 1.2520294189453125
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "31. SQL Notes by Apna College_2c1222e9_p25_chunk3",
+                            "source": "31. SQL Notes by Apna College_2c1222e9.pdf",
+                            "page_number": 25,
+                            "document": "• OPERATOR is a comparison operator such as =, >, <, IN, NOT IN, etc. \n• (SELECT column FROM table WHERE condition) is the subquery that provides \nthe input for the comparison. \n \nExample: Consider two tables: Products and Orders.  \n \nProducts Table: \n \nProductID \nProductName \nPrice \n1 \nLaptop \n1000 \n2 \nSmartphone \n500 \n3 \nHeadphones \n50 \n \n \n \n \n@Kuldeep_KVG",
+                            "distance": 0.9308331608772278,
+                            "rerank_score": -1.3998934030532837
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q19",
+            "question": "What is the current population of India?",
+            "expected_sources": [],
+            "answerable": false,
+            "generated_queries": [
+                "What is the current population of India?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": null,
+                        "recall_at_5": null,
+                        "ndcg_at_5": null,
+                        "unanswerable_non_relevant_rate": 1.0
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p80_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 80,
+                            "document": "0.03237,0,2.18,0,0.458,6.998,45.8,6.0622,3,222,18\n.7,394.63,2.94,33.4",
+                            "distance": 1.2072813510894775,
+                            "rerank_score": -6.262312412261963
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "9mb_bae4551c_p777_chunk5",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 777,
+                            "document": "+1.304.260.7099+1.304.260.7099",
+                            "distance": 1.2423107624053955,
+                            "rerank_score": -9.977787017822266
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p285_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 285,
+                            "document": "beer        1000      2000      3000\n           January     February        March\ncount     3.000000     3.000000     3.000000\nmean    353.333333   690.000000  1026.666667\nstd     560.386771  1134.504297  1709.073823\nmin      10.000000    30.000000    20.000000\n25%      30.000000    35.000000    40.000000\n50%      50.000000    40.000000    60.000000\n75%     525.000000  1020.000000  1530.000000\nmax    1000.000000  2000.000000  3000.000000",
+                            "distance": 1.266730546951294,
+                            "rerank_score": -10.915775299072266
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p201_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 201,
+                            "document": "(=100*(1+0.05)*(1+0.05)), and so forth.\nConversely, if you have a future value of USD 100 (with a 5% annual \ninvestment rate) that is two years in the future, what is its present value? \nThe answer involves dividing 100 by powers of (1+0.05). Specifically, \nthe present value of USD 100 from two years in the future equals 100/\n[(1+0.05)*(1+0.05)]. \nIn analogous fashion, the Bellman equation enables us to calculate the \ncurrent value of a state by calculating the discounted reward of subsequent",
+                            "distance": 1.2698767185211182,
+                            "rerank_score": -10.956239700317383
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p309_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 309,
+                            "document": "290 • Artificial Intelligence, Machine Learning, Deep Learning\n           January     February        March\ncount     3.000000     3.000000     3.000000\nmean    353.333333   690.000000  1026.666667\nstd     560.386771  1134.504297  1709.073823\nmin      10.000000    30.000000    20.000000\n25%      30.000000    35.000000    40.000000\n50%      50.000000    40.000000    60.000000\n75%     525.000000  1020.000000  1530.000000\nmax    1000.000000  2000.000000  3000.0000000",
+                            "distance": 1.2318018674850464,
+                            "rerank_score": -10.967270851135254
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": null,
+                        "recall_at_5": null,
+                        "ndcg_at_5": null,
+                        "unanswerable_non_relevant_rate": 1.0
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p80_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 80,
+                            "document": "0.03237,0,2.18,0,0.458,6.998,45.8,6.0622,3,222,18\n.7,394.63,2.94,33.4",
+                            "distance": 1.2072813510894775,
+                            "rerank_score": -6.262312412261963
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "9mb_bae4551c_p777_chunk5",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 777,
+                            "document": "+1.304.260.7099+1.304.260.7099",
+                            "distance": 1.2423107624053955,
+                            "rerank_score": -9.977787017822266
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "sample_p285_chunk4",
+                            "source": "sample.pdf",
+                            "page_number": 285,
+                            "document": "beer        1000      2000      3000\n           January     February        March\ncount     3.000000     3.000000     3.000000\nmean    353.333333   690.000000  1026.666667\nstd     560.386771  1134.504297  1709.073823\nmin      10.000000    30.000000    20.000000\n25%      30.000000    35.000000    40.000000\n50%      50.000000    40.000000    60.000000\n75%     525.000000  1020.000000  1530.000000\nmax    1000.000000  2000.000000  3000.000000",
+                            "distance": 1.266730546951294,
+                            "rerank_score": -10.915775299072266
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "sample_p201_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 201,
+                            "document": "(=100*(1+0.05)*(1+0.05)), and so forth.\nConversely, if you have a future value of USD 100 (with a 5% annual \ninvestment rate) that is two years in the future, what is its present value? \nThe answer involves dividing 100 by powers of (1+0.05). Specifically, \nthe present value of USD 100 from two years in the future equals 100/\n[(1+0.05)*(1+0.05)]. \nIn analogous fashion, the Bellman equation enables us to calculate the \ncurrent value of a state by calculating the discounted reward of subsequent",
+                            "distance": 1.2698767185211182,
+                            "rerank_score": -10.956239700317383
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "sample_p309_chunk1",
+                            "source": "sample.pdf",
+                            "page_number": 309,
+                            "document": "290 • Artificial Intelligence, Machine Learning, Deep Learning\n           January     February        March\ncount     3.000000     3.000000     3.000000\nmean    353.333333   690.000000  1026.666667\nstd     560.386771  1134.504297  1709.073823\nmin      10.000000    30.000000    20.000000\n25%      30.000000    35.000000    40.000000\n50%      50.000000    40.000000    60.000000\n75%     525.000000  1020.000000  1530.000000\nmax    1000.000000  2000.000000  3000.0000000",
+                            "distance": 1.2318018674850464,
+                            "rerank_score": -10.967270851135254
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Q20",
+            "question": "Who is the current Prime Minister of India?",
+            "expected_sources": [],
+            "answerable": false,
+            "generated_queries": [
+                "Who is the current Prime Minister of India?"
+            ],
+            "strategies": {
+                "Original RAG": {
+                    "metrics": {
+                        "precision_at_5": null,
+                        "recall_at_5": null,
+                        "ndcg_at_5": null,
+                        "unanswerable_non_relevant_rate": 1.0
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p80_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 80,
+                            "document": "0.03237,0,2.18,0,0.458,6.998,45.8,6.0622,3,222,18\n.7,394.63,2.94,33.4",
+                            "distance": 1.2898205518722534,
+                            "rerank_score": -10.409950256347656
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "9mb_bae4551c_p696_chunk5",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 696,
+                            "document": "gpouros@gmail.comgpouros@gmail.com\n+1.534.654.6168+1.534.654.6168",
+                            "distance": 1.2307096719741821,
+                            "rerank_score": -11.09352970123291
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "9mb_bae4551c_p1618_chunk2",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 1618,
+                            "document": "(262) 890-5505(262) 890-5505\nMiller-KrajcikMiller-Krajcik\njaylon.williamson@langosh.comjaylon.williamson@langosh.com\n765-994-8743765-994-8743\nConroy, Zieme and DickiConroy, Zieme and Dicki\nmayra19@gmail.commayra19@gmail.com\n(701) 730-9507(701) 730-9507\nPouros, Bednar and HillPouros, Bednar and Hill\nbailee.barrows@hotmail.combailee.barrows@hotmail.com\n+12724687001+12724687001",
+                            "distance": 1.274700403213501,
+                            "rerank_score": -11.150738716125488
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "9mb_bae4551c_p885_chunk4",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 885,
+                            "document": "757-991-3709757-991-3709\nRowe, Murazik and CollinsRowe, Murazik and Collins\nstehr.crawford@daugherty.comstehr.crawford@daugherty.com\n(781) 775-6192(781) 775-6192\nBechtelar IncBechtelar Inc\nibernhard@gmail.comibernhard@gmail.com\n1-283-653-29151-283-653-2915\nBode-GaylordBode-Gaylord\nolabadie@sporer.orgolabadie@sporer.org\n1-318-304-63321-318-304-6332\nJacobs LLCJacobs LLC\nmargie35@hirthe.orgmargie35@hirthe.org\n220.710.7406220.710.7406",
+                            "distance": 1.272810935974121,
+                            "rerank_score": -11.152225494384766
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "9mb_bae4551c_p2362_chunk5",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 2362,
+                            "document": "Emmerich-JastEmmerich-Jast\nyabernathy@hotmail.comyabernathy@hotmail.com\n(351) 814-3217(351) 814-3217\nGreenfelder LtdGreenfelder Ltd\nrau.laila@gmail.comrau.laila@gmail.com\n785.515.7217785.515.7217\nKoelpin PLCKoelpin PLC\ntimothy.stracke@gmail.comtimothy.stracke@gmail.com\n1-352-979-74881-352-979-7488",
+                            "distance": 1.2788619995117188,
+                            "rerank_score": -11.16058349609375
+                        }
+                    ]
+                },
+                "Multi-Query RAG": {
+                    "metrics": {
+                        "precision_at_5": null,
+                        "recall_at_5": null,
+                        "ndcg_at_5": null,
+                        "unanswerable_non_relevant_rate": 1.0
+                    },
+                    "retrieved_chunks": [
+                        {
+                            "rank": 1,
+                            "chunk_id": "sample_p80_chunk2",
+                            "source": "sample.pdf",
+                            "page_number": 80,
+                            "document": "0.03237,0,2.18,0,0.458,6.998,45.8,6.0622,3,222,18\n.7,394.63,2.94,33.4",
+                            "distance": 1.2898205518722534,
+                            "rerank_score": -10.409950256347656
+                        },
+                        {
+                            "rank": 2,
+                            "chunk_id": "9mb_bae4551c_p696_chunk5",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 696,
+                            "document": "gpouros@gmail.comgpouros@gmail.com\n+1.534.654.6168+1.534.654.6168",
+                            "distance": 1.2307096719741821,
+                            "rerank_score": -11.09352970123291
+                        },
+                        {
+                            "rank": 3,
+                            "chunk_id": "9mb_bae4551c_p1618_chunk2",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 1618,
+                            "document": "(262) 890-5505(262) 890-5505\nMiller-KrajcikMiller-Krajcik\njaylon.williamson@langosh.comjaylon.williamson@langosh.com\n765-994-8743765-994-8743\nConroy, Zieme and DickiConroy, Zieme and Dicki\nmayra19@gmail.commayra19@gmail.com\n(701) 730-9507(701) 730-9507\nPouros, Bednar and HillPouros, Bednar and Hill\nbailee.barrows@hotmail.combailee.barrows@hotmail.com\n+12724687001+12724687001",
+                            "distance": 1.274700403213501,
+                            "rerank_score": -11.150738716125488
+                        },
+                        {
+                            "rank": 4,
+                            "chunk_id": "9mb_bae4551c_p885_chunk4",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 885,
+                            "document": "757-991-3709757-991-3709\nRowe, Murazik and CollinsRowe, Murazik and Collins\nstehr.crawford@daugherty.comstehr.crawford@daugherty.com\n(781) 775-6192(781) 775-6192\nBechtelar IncBechtelar Inc\nibernhard@gmail.comibernhard@gmail.com\n1-283-653-29151-283-653-2915\nBode-GaylordBode-Gaylord\nolabadie@sporer.orgolabadie@sporer.org\n1-318-304-63321-318-304-6332\nJacobs LLCJacobs LLC\nmargie35@hirthe.orgmargie35@hirthe.org\n220.710.7406220.710.7406",
+                            "distance": 1.272810935974121,
+                            "rerank_score": -11.152225494384766
+                        },
+                        {
+                            "rank": 5,
+                            "chunk_id": "9mb_bae4551c_p2362_chunk5",
+                            "source": "9mb_bae4551c.pdf",
+                            "page_number": 2362,
+                            "document": "Emmerich-JastEmmerich-Jast\nyabernathy@hotmail.comyabernathy@hotmail.com\n(351) 814-3217(351) 814-3217\nGreenfelder LtdGreenfelder Ltd\nrau.laila@gmail.comrau.laila@gmail.com\n785.515.7217785.515.7217\nKoelpin PLCKoelpin PLC\ntimothy.stracke@gmail.comtimothy.stracke@gmail.com\n1-352-979-74881-352-979-7488",
+                            "distance": 1.2788619995117188,
+                            "rerank_score": -11.16058349609375
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

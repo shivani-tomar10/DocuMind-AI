@@ -1,23 +1,30 @@
 
+import logging
 from functools import lru_cache
+from typing import Any
 
 from sentence_transformers import SentenceTransformer
 
 
+logger = logging.getLogger(__name__)
+
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+
+
 @lru_cache(maxsize=1)
-def load_embedding_model():
-    """Load the embedding model only when first required."""
+def load_embedding_model() -> SentenceTransformer:
+    """Load and cache the embedding model."""
 
-    print("Loading embedding model...", flush=True)
+    logger.info("Loading embedding model: %s", EMBEDDING_MODEL)
 
-    model = SentenceTransformer("all-MiniLM-L6-v2")
+    model = SentenceTransformer(EMBEDDING_MODEL)
 
-    print("Embedding model loaded successfully!", flush=True)
+    logger.info("Embedding model loaded successfully.")
 
     return model
 
 
-def generate_embeddings(chunks):
+def generate_embeddings(chunks: list[dict[str, Any]]):
     """Generate embeddings for document chunks."""
 
     if not chunks:
@@ -25,16 +32,19 @@ def generate_embeddings(chunks):
 
     model = load_embedding_model()
 
-    texts = [
-        chunk["text"] for chunk in chunks
-    ]
+    texts = [chunk["text"] for chunk in chunks]
 
-    embeddings = model.encode(texts)
+    embeddings = model.encode(
+        texts,
+        show_progress_bar=False
+    )
 
     return embeddings
 
 
 if __name__ == "__main__":
+
+    logging.basicConfig(level=logging.INFO)
 
     sample_chunks = [
         {"text": "Artificial Intelligence is transforming industries."},
@@ -46,4 +56,3 @@ if __name__ == "__main__":
 
     print("Total embeddings:", len(vectors))
     print("Vector dimensions:", vectors.shape)
-    print("First embedding:", vectors[0])
