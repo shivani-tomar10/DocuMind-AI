@@ -31,6 +31,18 @@ if "messages" not in st.session_state:
 if "uploaded_documents" not in st.session_state:
     st.session_state.uploaded_documents = []
 
+if "selected_document" not in st.session_state:
+    st.session_state.selected_document = None
+
+
+# ================================================
+# CHAT RESET CALLBACK
+# ================================================
+
+def clear_chat_on_document_change():
+
+    st.session_state.messages = []
+
 
 # ================================================
 # CUSTOM STYLING
@@ -128,13 +140,17 @@ with st.sidebar:
 
                         result = response.json()
 
-                        st.success(
-                            f"Uploaded: {uploaded_file.name}"
-                        )
-
                         filename = result["filename"]
 
-                        if filename not in st.session_state.uploaded_documents:
+                        st.success(
+                            f"Uploaded: {filename}"
+                        )
+
+                        if (
+                            filename
+                            not in st.session_state.uploaded_documents
+                        ):
+
                             st.session_state.uploaded_documents.append(
                                 filename
                             )
@@ -144,11 +160,14 @@ with st.sidebar:
                     else:
 
                         try:
+
                             error_message = response.json().get(
                                 "detail",
                                 response.text
                             )
+
                         except ValueError:
+
                             error_message = response.text
 
                         st.error(
@@ -172,6 +191,52 @@ with st.sidebar:
                     "processed successfully!"
                 )
 
+                st.rerun()
+
+    st.divider()
+
+
+    # ============================================
+    # SELECT PDF DOCUMENT
+    # ============================================
+
+    st.subheader("📚 Select a PDF")
+
+    if st.session_state.uploaded_documents:
+
+        document_options = sorted(
+            st.session_state.uploaded_documents
+        )
+
+        # Keep the selected document valid.
+        if (
+            st.session_state.selected_document
+            not in document_options
+        ):
+
+            st.session_state.selected_document = (
+                document_options[0]
+            )
+
+        selected_document = st.selectbox(
+            "Choose a document before asking questions",
+            options=document_options,
+            key="selected_document",
+            on_change=clear_chat_on_document_change
+        )
+
+        st.success(
+            f"Selected: {selected_document}"
+        )
+
+    else:
+
+        st.session_state.selected_document = None
+
+        st.info(
+            "Upload at least one PDF to start chatting."
+        )
+
     st.divider()
 
 
@@ -179,37 +244,25 @@ with st.sidebar:
     # UPLOADED DOCUMENTS
     # ============================================
 
-    st.subheader("📚 Uploaded Documents")
+    st.subheader("📄 Uploaded Documents")
 
     if st.session_state.uploaded_documents:
 
-        for document in st.session_state.uploaded_documents:
+        for document in sorted(
+            st.session_state.uploaded_documents
+        ):
 
-            st.write(f"📄 {document}")
+            if document == st.session_state.selected_document:
+
+                st.markdown(f"✅ **{document}**")
+
+            else:
+
+                st.write(f"📄 {document}")
 
     else:
 
-        st.caption(
-            "No documents uploaded in this session yet."
-        )
-
-    st.divider()
-
-
-    # ============================================
-    # SEARCH SETTINGS
-    # ============================================
-
-    st.subheader("🔍 Search Settings")
-
-    search_all_documents = st.checkbox(
-        "Enable document-balanced retrieval",
-        value=False,
-        help=(
-            "Retrieve candidates from each document "
-            "before combining the results."
-        )
-    )
+        st.caption("No documents uploaded in this session yet.")
 
     st.divider()
 
@@ -267,12 +320,20 @@ except requests.RequestException:
 # MAIN CHAT INTERFACE
 # ================================================
 
-st.subheader("💬 Chat with Your Documents")
+st.subheader("💬 Chat with Your Selected Document")
 
-st.caption(
-    "Ask questions about the information "
-    "contained in your uploaded PDFs."
-)
+if st.session_state.selected_document:
+
+    st.caption(
+        f"Currently chatting with: "
+        f"{st.session_state.selected_document}"
+    )
+
+else:
+
+    st.warning(
+        "Please upload and select a PDF before asking questions."
+    )
 
 
 # ================================================
@@ -305,7 +366,8 @@ for message in st.session_state.messages:
 # ================================================
 
 question = st.chat_input(
-    "Ask something about your uploaded documents..."
+    "Ask something about your selected PDF...",
+    disabled=not st.session_state.selected_document
 )
 
 
@@ -314,6 +376,8 @@ question = st.chat_input(
 # ================================================
 
 if question:
+
+    selected_document = st.session_state.selected_document
 
     st.session_state.messages.append({
         "role": "user",
@@ -327,7 +391,7 @@ if question:
     with st.chat_message("assistant"):
 
         with st.spinner(
-            "Searching documents and generating answer..."
+            f"Searching {selected_document} and generating answer..."
         ):
 
             try:
@@ -336,7 +400,7 @@ if question:
                     f"{API_URL}/ask",
                     json={
                         "question": question,
-                        "search_all_documents": search_all_documents
+                        "selected_document": selected_document
                     },
                     timeout=300
                 )

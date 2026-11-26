@@ -82,3 +82,47 @@ def store_chunks(chunks, embeddings):
         "Total documents stored:",
         collection.count()
     )
+
+
+# --------------------------------
+# List Indexed PDF Documents
+# --------------------------------
+
+def list_indexed_documents():
+
+    documents = {}
+
+    total_chunks = collection.count()
+
+    batch_size = 1000
+
+    for offset in range(0, total_chunks, batch_size):
+
+        results = collection.get(
+            limit=batch_size,
+            offset=offset,
+            include=["metadatas"]
+        )
+
+        metadatas = results.get("metadatas", [])
+
+        for metadata in metadatas:
+
+            if not metadata:
+                continue
+
+            filename = metadata.get("source")
+
+            if filename:
+
+                documents[filename] = (
+                    documents.get(filename, 0) + 1
+                )
+
+    return [
+        {
+            "filename": filename,
+            "chunks": chunks
+        }
+        for filename, chunks in sorted(documents.items())
+    ]

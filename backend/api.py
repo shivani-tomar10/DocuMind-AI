@@ -22,7 +22,7 @@ from backend.llm import (
 from backend.pdf_processor import extract_text_from_pdf
 from backend.chunking import create_chunks_with_metadata
 from backend.embeddings import generate_embeddings
-from backend.vector_store import store_chunks
+from backend.vector_store import store_chunks, collection
 
 
 # --------------------------------
@@ -32,7 +32,7 @@ from backend.vector_store import store_chunks
 app = FastAPI(
     title="DocuMind AI",
     description="Intelligent Multi-PDF Research Assistant",
-    version="1.3.0"
+    version="1.4.0"
 )
 
 
@@ -52,7 +52,7 @@ MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 
 class QuestionRequest(BaseModel):
     question: str
-    search_all_documents: bool = False
+    selected_document: str
 
 
 # --------------------------------
@@ -86,13 +86,48 @@ def ask_question(request: QuestionRequest):
                 detail="Question cannot be empty."
             )
 
-        # Step 2: Generate alternative search queries
+        # Step 2: Validate selected document
+        selected_document = Path(
+            request.selected_document
+        ).name
+
+        if not selected_document.lower().endswith(".pdf"):
+            raise HTTPException(
+                status_code=400,
+                detail="Please select a valid PDF document."
+            )
+
+        # Step 3: Check whether selected PDF exists
+        if not (UPLOAD_FOLDER / selected_document).is_file():
+
+            raise HTTPException(
+                status_code=404,
+                detail="Selected PDF was not found."
+            )
+
+        # Step 4: Check whether selected PDF is indexed
+        indexed_documents = collection.get(
+            where={"source": selected_document},
+            include=["metadatas"]
+        )
+
+        if not indexed_documents["ids"]:
+
+            raise HTTPException(
+                status_code=404,
+                detail=(
+                    "Selected PDF has not been indexed. "
+                    "Please upload it again."
+                )
+            )
+
+        # Step 5: Generate alternative search queries
         alternative_queries = generate_search_queries(
             query,
             num_queries=3
         )
 
-        # Step 3: Combine original and alternative queries
+        # Step 6: Combine original and alternative queries
         search_queries = [query]
 
         for alternative in alternative_queries:
@@ -109,14 +144,16 @@ def ask_question(request: QuestionRequest):
             ):
                 search_queries.append(cleaned_query)
 
-        # Step 4: Retrieve chunks using RRF
+        # Step 7: Retrieve chunks ONLY from selected PDF
         results = retrieve_with_rrf(
             queries=search_queries,
             top_k=10,
-            per_document=request.search_all_documents
+            candidate_k=40,
+            per_document=False,
+            source=selected_document
         )
 
-        # Step 5: Check retrieved documents
+        # Step 8: Check retrieved documents
         documents = results.get("documents", [[]])
 
         if not documents or not documents[0]:
@@ -124,37 +161,37 @@ def ask_question(request: QuestionRequest):
             raise HTTPException(
                 status_code=404,
                 detail=(
-                    "No relevant documents found. "
-                    "Please upload a PDF first."
+                    "No relevant information found in "
+                    "the selected PDF. Try another question."
                 )
             )
 
-        # Step 6: Expand retrieved chunks
+        # Step 9: Expand retrieved chunks
         expanded_results = expand_retrieved_chunks(
             results
         )
 
-        # Step 7: Construct document context
+        # Step 10: Construct document context
         context = build_context(
             expanded_results
         )
 
-        # Step 8: Generate answer
+        # Step 11: Generate answer
         answer = generate_answer(
             query,
             context
         )
 
-        # Step 9: Extract metadata
+        # Step 12: Extract metadata
         metadatas = expanded_results["metadatas"][0]
 
-        # Step 10: Validate citations
+        # Step 13: Validate citations
         answer, invalid_citations = validate_citations(
             answer,
             metadatas
         )
 
-        # Step 11: Extract unique sources and pages
+        # Step 14: Extract unique sources and pages
         no_answer_message = (
             "The information was not found in the uploaded documents."
         )
@@ -175,15 +212,18 @@ def ask_question(request: QuestionRequest):
                     metadata["page_number"]
                 )
 
-                if source_key not in seen_sources:
+                if (
+                    metadata["source"] == selected_document
+                    and source_key not in seen_sources
+                ):
 
                     sources.append(metadata)
                     seen_sources.add(source_key)
 
-        # Step 12: Return response
+        # Step 15: Return response
         return {
             "question": query,
-            "search_all_documents": request.search_all_documents,
+            "selected_document": selected_document,
             "answer": answer,
             "sources": sources,
             "invalid_citations": invalid_citations,
